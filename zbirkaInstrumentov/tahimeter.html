@@ -30,7 +30,7 @@
         <div style="padding-top: 50px;" class="container justify-content-center">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-5">
-                    <img src="" id="slika">
+                    <img src="" id="slika" style="height: auto; width: 100%;">
                 </div>
         
                 <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
@@ -208,7 +208,7 @@
         <script>
             var url = window.location.href;
             var n = url.length;
-            var id = url.slice(52, n);
+            var id = url.slice(62, n);
             document.getElementById('slika').src = "img/instrument_" + id + ".png";
             var data = '{ "instrumenti" : [' +
             '{ "id":"37" , "vrsta":"Avtoredukcijski tahimeter", "proizvajalec":"Carl Zeiss Jena" , "model":"Redta 002", "mere":"6,60; 30/18/30", "leto":"1951", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Cevna libela na alhidadi", "Koincidenčna libela za vertikalni krog"], "premer1":"Zaščiten, 114 mm", "premer2":"Zaščiten, 74 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Optični mikrometer", "izvedba2":"Optični mikrometer", "nonij1":"60", "nonij2":"60", "interval1":"1\', cenjenje 6\'\'", "interval2":"1\', cenjenje 6\'\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"/", "princip":"Optični razdaljemer z dvojno sliko – paralaktični trikotnik s spremenljivim kotom in bazo na horizontalni lati na cilju", "natancnost":"2 cm / 100 m", "premerObjektiva":"42 mm", "povecava":"25 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna horizontalna in vertikalna nit, distančni niti, konstanta 100, dodatni vertikalni niti za merjenje s posebno horizontalno lato", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
