@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010; width: auto;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding-top: 50px;" class="container justify-content-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-5">
+                    <img src="" id="slika" style="height: auto; width: 100%;">
+                </div>
+        
+                <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th scope="row">Evidenčna številka</th>
+                            <td id="evidencna"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta instrumenta</th>
+                            <td id="vrsta"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Proizvajalec</th>
+                            <td id="proizvajalec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Model</th>
+                            <td id="model"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Masa[kg]; mere d/š/v[cm]</th>
+                            <td id="mere"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leto izdelave</th>
+                            <td id="leto"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col"></th>
+                            <th scope="col">Osnovni podatki</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Vrsta razdaljemera</th>
+                            <td id="vrsta1"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Postavitev instrumenta</th>
+                            <td id="postavitev"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Standardni odklon</th>
+                            <td id="odklon"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Doseg</th>
+                            <td id="doseg"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Čas ene meritve</th>
+                            <td id="cas"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Čitanje dolžine</th>
+                            <td id="citanje"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Svetlobni vir</th>
+                            <td id="svetloba"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nosilno valovanje</th>
+                            <td id="valovanje"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Merska frekvenca</th>
+                            <td id="frekvenca"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <b>Stanje instrumenta: </b>
+            <p id="stanje"></p>
+            <br>
+        </div>
+
+        <script>
+            var url = window.location.href;
+            var n = url.length;
+            var id = url.slice(54, n);
+            document.getElementById('slika').src = "img/instrument_" + id + ".png";
+            var data = '{ "instrumenti" : [' +
+            '{ "id":"68" , "vrsta":"razdaljemer z nosilcem GTR 40", "proizvajalec":"Leica Wild" , "model":"DI 3000S", "mere":"3,42; 20/19/30", "leto":"1998", "vrsta1":"impulzni razdaljemer", "postavitev":"Dozna libela", "odklon":"3 mm; 1 ppm/ 10 mm; 1 ppm", "doseg":"9000 m", "cas":"3,5 s; 0,8 s", "citanje":"/", "svetloba":"Laserska dioda", "valovanje":"0,860 μm", "frekvenca":"15 MHz", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"92" , "vrsta":"Razdaljemer", "proizvajalec":"Hewlett Packard (HP)" , "model":"3800B", "mere":"8,9; 33/32/32", "leto":"1969", "vrsta1":"Fazni ", "postavitev":"Navadno grezilo, dozna libela", "odklon":"5 mm ; 7 ppm", "doseg":"2300 m do 3000 m s tremi reflektorji", "cas":"Manj kot 2 minuti", "citanje":"Digitalno, na zaslonu – 6 mestno število, na dve decimalki", "svetloba":"Laserska dioda", "valovanje":"840 nm", "frekvenca":"15 MHz", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"70" , "vrsta":"Razdaljemer", "proizvajalec":"Kern" , "model":"DM502", "mere":"1,62; 17/8/19", "leto":"1983", "vrsta1":"Fazni ", "postavitev":"/", "odklon":"/", "doseg":"1200 m z enim reflektorjem; 2000 m s tremi reflektorji", "cas":"8 sekund", "citanje":"Digitalno, na zaslonu – 6 mestno število", "svetloba":"Infrardeča polprevodniška  GaAs dioda", "valovanje":"0,86 μm", "frekvenca":"14,9854 MHz,  149,854 kHz", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"84" , "vrsta":"Razdaljemer", "proizvajalec":"Kern" , "model":"DM503", "mere":"1,53; 16/7/19", "leto":"1986", "vrsta1":"Fazni ", "postavitev":"/", "odklon":"/", "doseg":"2500 m z enim reflektorjem; 3000 m s tremi reflektorji", "cas":"7,5 sekund", "citanje":"Digitalno, na zaslonu – 6 mestno število", "svetloba":"Infrardeča polprevodniška  GaAs dioda", "valovanje":"0,86 μm", "frekvenca":"15 MHz", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"86" , "vrsta":"Razdaljemer", "proizvajalec":"Kern" , "model":"Mekometer ME 3000", "mere":"17,1; 46/25/36", "leto":"1972 (1980)", "vrsta1":"Fazni ", "postavitev":"/", "odklon":"0,2 mm ; 1 ppm", "doseg":"1,5 km z enim reflektorjem; 2,5 km s tremi reflektorji", "cas":"2 do 3 minute", "citanje":"Digitalno, na zaslonu – 7 mestno število", "svetloba":" Xenon svetlobna impulzna bliskovnica", "valovanje":"485 nm", "frekvenca":"500 MHz", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"87" , "vrsta":"Precizni razdaljemer", "proizvajalec":"Kern" , "model":"Mekometer ME 5000", "mere":"11,27; 33/25/40", "leto":"Do 1990 (1989)", "vrsta1":"Fazni ", "postavitev":"Optično grezilo, cevna libela", "odklon":"0,2 mm + 0,2 ppm", "doseg":"5 km z enim reflektorjem; 8 km s tremi reflektorji", "cas":"90 sekund", "citanje":"Digitalno, na zaslonu – 7 mestno število", "svetloba":"Helij – Neonov laser", "valovanje":"632,8 nm", "frekvenca":"475 MHz do 495 MHz", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }]}';
+            var obj = JSON.parse(data);
+            var len = Object.values(obj.instrumenti).length;
+            for (var i = 0; i < len; i++) {
+                if (obj.instrumenti[i].id == id) {
+                    document.getElementById('evidencna').innerHTML = obj.instrumenti[i].id;
+                    document.getElementById('vrsta').innerHTML = obj.instrumenti[i].vrsta;
+                    document.getElementById('proizvajalec').innerHTML = obj.instrumenti[i].proizvajalec;
+                    document.getElementById('model').innerHTML = obj.instrumenti[i].model;
+                    document.getElementById('mere').innerHTML = obj.instrumenti[i].mere;
+                    document.getElementById('leto').innerHTML = obj.instrumenti[i].leto;
+                    document.getElementById('vrsta1').innerHTML = obj.instrumenti[i].vrsta1;
+                    document.getElementById('postavitev').innerHTML = obj.instrumenti[i].postavitev;
+                    document.getElementById('odklon').innerHTML = obj.instrumenti[i].odklon;
+                    document.getElementById('doseg').innerHTML = obj.instrumenti[i].doseg;
+                    document.getElementById('cas').innerHTML = obj.instrumenti[i].cas;
+                    document.getElementById('citanje').innerHTML = obj.instrumenti[i].citanje;
+                    document.getElementById('svetloba').innerHTML = obj.instrumenti[i].svetloba;
+                    document.getElementById('valovanje').innerHTML = obj.instrumenti[i].valovanje;
+                    document.getElementById('frekvenca').innerHTML = obj.instrumenti[i].frekvenca;
+                    document.getElementById('stanje').innerHTML = obj.instrumenti[i].stanje;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

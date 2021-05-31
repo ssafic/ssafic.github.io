@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010; width: auto;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding-top: 50px;" class="container justify-content-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-5">
+                    <img src="" id="slika">
+                </div>
+        
+                <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th scope="row">Evidenčna številka</th>
+                            <td id="evidencna"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta instrumenta</th>
+                            <td id="vrsta"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Proizvajalec</th>
+                            <td id="proizvajalec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Model</th>
+                            <td id="model"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Masa[kg]; mere d/š/v[cm]</th>
+                            <td id="mere"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leto izdelave</th>
+                            <td id="leto"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col" id="naslov"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="tabela"></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col"></th>
+                            <th scope="col">Horizontalni krog</th>
+                            <th scope="col">Vertikalni krog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Premer</th>
+                            <td id="premer1"></td>
+                            <td id="premer2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta razdelbe</th>
+                            <td id="vrstaRazdelbe1"></td>
+                            <td id="vrstaRazdelbe2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nosilec</th>
+                            <td id="nosilec1"></td>
+                            <td id="nosilec2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Razdelba</th>
+                            <td id="razdelba1"></td>
+                            <td id="razdelba2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enota</th>
+                            <td id="enota1"></td>
+                            <td id="enota2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Čitanje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število mest</th>
+                            <td id="stMest1"></td>
+                            <td id="stMest2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Izvedba</th>
+                            <td id="izvedba1"></td>
+                            <td id="izvedba2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število enot</th>
+                            <td id="nonij1"></td>
+                            <td id="nonij2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Osnovni interval</th>
+                            <td id="interval1"></td>
+                            <td id="interval2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Repeticija</th>
+                            <td id="repeticija1"></td>
+                            <td id="repeticija2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion1" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Daljnogled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Premer objektiva</th>
+                            <td id="premerObjektiva"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Povečava</th>
+                            <td id="povecava"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Tip</th>
+                            <td id="tip"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Nitni križ</th>
+                            <td id="kriz"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <b>Stanje instrumenta: </b>
+            <p id="stanje"></p>
+            <br>
+        </div>
+
+        <script>
+            var url = window.location.href;
+            var n = url.length;
+            var id = url.slice(51, n);
+            document.getElementById('slika').src = "img/instrument_" + id + ".png";
+            var data = '{ "instrumenti" : [' +
+            '{ "id":"63" , "vrsta":"Balonteodolit", "proizvajalec":"Askania" , "model":"bxx", "mere":"2,65; 20/25/25", "leto":"1942", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Cevna libela na vrhu instrumenta"], "premer1":"Zaščiten razen mesta za čitanje,  12 cm", "premer2":"Neaščiten polkrog, 12 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Kovinski nosilec", "nosilec2":"Kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"2", "stMest2":"2", "izvedba1":"Nonij", "izvedba2":"Nonij", "nonij1":"600", "nonij2":"600", "interval1":"6\'", "interval2":"6\'", "repeticija1":"Ne", "repeticija2":"/", "premerObjektiva":"40 mm; za iskanje 13,5 mm", "povecava":"16 x, za iskanje 3 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Nitni križ z osnovno horizontalno in osnovno vertikalno nitjo", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"65" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss Jena" , "model":"Theo 120", "mere":"2,53; 13/14/25", "leto":"1971", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Cevna libela na vrhu instrumenta", "Kompenzator"], "premer1":"Zaščiten, 61 mm", "premer2":"Zaščiten, 61 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"", "enota2":"", "stMest1":"1", "stMest2":"1", "izvedba1":"Črtni mikroskop", "izvedba2":"Črtni mikroskop", "nonij1":"/", "nonij2":"/", "interval1":"cenitev na 1\'", "interval2":"cenitev na 1\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"", "premerObjektiva":"32 mm", "povecava":"16 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Lakirana manjša poškodba barve" }, ' +
+            '{ "id":"66" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss Jena" , "model":"Theo 080A", "mere":"1,9; 19/14/23", "leto":"1979", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Cevna libela na vrhu instrumenta", "Kompenzator"], "premer1":"Zaščiten, 61 mm", "premer2":"Zaščiten, 61 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"", "enota2":"", "stMest1":"1", "stMest2":"1", "izvedba1":"Črtni mikroskop", "izvedba2":"Črtni mikroskop", "nonij1":"/", "nonij2":"/", "interval1":"cenitev na 30\'\'", "interval2":"cenitev na 30\'\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"", "premerObjektiva":"32 mm", "povecava":"18 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"69" , "vrsta":"Teodolit", "proizvajalec":"Kern" , "model":"E12", "mere":"8,14; 19/22/37", "leto":"1985", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten, 70 mm", "premer2":"Zaščiten, 60 mm", "vrstaRazdelbe1":"Inkrementalna razdelba", "vrstaRazdelbe2":"Inkrementalna razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna ali centezimalna", "razdelba2":"Seksagezimalna ali centezimalna", "enota1":"", "enota2":"", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"10\'\'", "interval2":"10\'\'", "repeticija1":"Ne, možnost resetiranja odčitka", "repeticija2":"Določitev mesta horizonta s prevrtanjem preko Hz vizure", "premerObjektiva":"45 mm", "povecava":"32 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"7" , "vrsta":"Teodolit z originalnim stativom G7567", "proizvajalec":"E. Kraft & Sohn Wien" , "model":"/", "mere":"/", "leto":"1867", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Vijaki na stativu, tudi kavelj za pripetje teodolita na stativ", "Vznožni vijaki na stativu", "Nivelacijska libela na daljnogledu ( manjka) – tudi za horizontiranje"], "premer1":"Nezaščiten, odprt, 16 cm", "premer2":"Nezaščiten, odprt, polkrog 14 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba 50°- 0°, 0°- 50°", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"20\'", "enota2":"20\'", "stMest1":"2", "stMest2":"1", "izvedba1":"Nonij", "izvedba2":"Nonij", "nonij1":"20", "nonij2":"20", "interval1":"1\'", "interval2":"1\'", "repeticija1":"/", "repeticija2":"/", "premerObjektiva":"28 mm", "povecava":"/", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Osnovna Hz in V nit, distančni niti, niti pripete na kovinski okvir", "stanje": "Popolnoma restavriran sept. 2016, izdelava kleme privojnega vijaka Hz kroga, nov nitni križ; Stativ restavriran, lakiran, dodano originalno navadno grezilo." }, ' +
+            '{ "id":"9" , "vrsta":"Teodolit", "proizvajalec":"Starke & Kammerer Wien" , "model":"/", "mere":"5,30; 26/22/29", "leto":"1900", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Precizna reverzibilna (obrnljiva) libela – nivelacijska libela"], "premer1":"Zaprt, zaščiten, 15 cm", "premer2":"Odprt, 10 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"20\'", "enota2":"20\'", "stMest1":"2", "stMest2":"1 ( v nadirju)", "izvedba1":"Nonij", "izvedba2":"Nonij", "nonij1":"20", "nonij2":"20", "interval1":"1\'", "interval2":"1\'", "repeticija1":"/", "repeticija2":"/", "premerObjektiva":"30 mm", "povecava":"17 x", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Reichenbachov nitni križ, konstanta je 100", "stanje": "Popolnoma restavriran okt. 2016" }, ' +
+            '{ "id":"11" , "vrsta":"Teodolit tahimeter", "proizvajalec":"Ertel München" , "model":"/", "mere":"8,99; 37/28/41", "leto":"1900", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Dozna libela postavljena centralno", "Zavarovana libela, elevacijski vijak", "Precizna reverzibilna libela na daljnogledu", "Jahalna libela nastavljiva na nosilec daljnogleda"], "premer1":"Zaščiten, zaprt, 18 cm", "premer2":"Zaščiten, 15 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Vijačni mikroskop", "izvedba2":"Nonij", "nonij1":"Razdelitev osnovnega intervala na 5 delov, petina je 120 enot", "nonij2":"60", "interval1":"1\'\'", "interval2":"10\'\'", "repeticija1":"Privojni in mikrometerski vijak", "repeticija2":"/", "premerObjektiva":"30 mm", "povecava":"17 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta je 100", "stanje": "Popolnoma restavriran okt. 2016, lakiran (prebarvan), nov okvir za blendo objektiva, novo ogledalce jahalne libele" }, ' +
+            '{ "id":"13" , "vrsta":"Teodolit", "proizvajalec":"R & A Rost Wien" , "model":"/", "mere":"5,51; 25/22/30", "leto":"1890", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Vertikalni krog: zavarovana libela, elevacijski vijak", "Precizna reverzibilna (obrnljiva) nivelacijska libela"], "premer1":"Odprt, nezaščiten, 15 cm", "premer2":"Odprt, nezaščiten, 12 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Nonij", "izvedba2":"Nonij", "nonij1":"30", "nonij2":"30", "interval1":"20\'\'", "interval2":"20\'\'", "repeticija1":"Privojni in mikrometerski vijak", "repeticija2":"/", "premerObjektiva":"30 mm", "povecava":"17 x", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Reichenbachov nitni križ, konstanta je 100", "stanje": "Popolnoma restavriran okt. 2016, novi blendi ob lupi za čitanje V kroga" }, ' +
+            '{ "id":"14" , "vrsta":"Busolni teodolit", "proizvajalec":"R & A Rost Wien" , "model":"/", "mere":"4,42; 20/16/30", "leto":"1885", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Nivelacijska libela na daljnogledu", "Posebno podnožje za čepni stativ"], "premer1":"Zaščiten s steklom, 7,5 cm, busola s privojnim vijakom", "premer2":"Odprt, nezaščiten, 7,5 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna (0°- 50° in 360°- 310°)", "enota1":"30\'", "enota2":"30\'", "stMest1":"/", "stMest2":"1", "izvedba1":"Direktno čitanje", "izvedba2":"Nonij", "nonij1":"/", "nonij2":"30", "interval1":"/", "interval2":"1\'", "repeticija1":"Ne", "repeticija2":"/", "premerObjektiva":"25 mm", "povecava":"/", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Reichenbachov nitni križ", "stanje": "Popolnoma restavriran okt. 2016, dodan leseni podstavek" }, ' +
+            '{ "id":"16" , "vrsta":"Teodolit", "proizvajalec":"R & A Rost Wien" , "model":"/", "mere":"6,12; 24/21/27", "leto":"1900", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Vertikalni krog: zavarovana libela, elevacijski vijak", "Precizna reverzibilna (obrnljiva) nivelacijska libela na daljnogledu"], "premer1":"Zaščiten, 14 cm", "premer2":"Ni zaščiten, 10 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"20\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Vijačni mikroskop", "izvedba2":"Nonij", "nonij1":"60", "nonij2":"20", "interval1":"10\'\'", "interval2":"1\'", "repeticija1":"Da, privojni in mikrometrski vijak", "repeticija2":"/", "premerObjektiva":"30 mm", "povecava":"17 x", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Reichenbachov nitni križ, konstanta je 100", "stanje": "Popolnoma restavriran nov. 2016, delno lakiran, novi dve blendi in en okvir, obnovljena libela" }, ' +
+            '{ "id":"17" , "vrsta":"Teodolit", "proizvajalec":"Otto Fennel & Sohne Kassel" , "model":"/", "mere":"4,28; 31/15/23", "leto":"1920", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Precizna reverzibilna (obrnljiva) nivelacijska libela na daljnogledu"], "premer1":"Ni zaščiten, 12 cm", "premer2":"Ni zaščiten, 12 cm, le kvadrant od  -65° do 65°", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"30\'", "enota2":"30\'", "stMest1":"1", "stMest2":"1", "izvedba1":"Nonij", "izvedba2":"Nonij", "nonij1":"30", "nonij2":"30", "interval1":"1\'", "interval2":"1\'", "repeticija1":"Ne", "repeticija2":"/", "premerObjektiva":"35 mm", "povecava":"/", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta je 100", "stanje": "Delno lakiran, poliran nov. 2016" }, ' +
+            '{ "id":"20" , "vrsta":"Teodolit", "proizvajalec":"Starke & Kammerer Wien" , "model":"/", "mere":"5,57; 27/22/30", "leto":"Začetek 20. stol.", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Vertikalni krog: zavarovana libela, elevacijski vijak", "Precizna reverzibilna (obrnljiva) nivelacijska libela na daljnogledu"], "premer1":"Zaščiten, 15 cm", "premer2":"Ni zaščiten, 12 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Skalni mikroskop", "izvedba2":"Nonij", "nonij1":"10", "nonij2":"30", "interval1":"1\', cenitev 0.1\' (6\'\')", "interval2":"20\'", "repeticija1":"Privojni in mikrometerski vijak", "repeticija2":"/", "premerObjektiva":"34 mm", "povecava":"35 x", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Dvojna vertikalna nit, enojna osnovna horizontalna nit, distančni niti, konstanta 100", "stanje": "Popolnoma restavriran okt. 2016, nova klema privojnega vijaka Hz kroga" }, ' +
+            '{ "id":"22" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss Jena" , "model":"Th III", "mere":"5,43; 18/16/26", "leto":"1936", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Cevna libela na alhidadi postavljena centrično", "Indeks libela (zavarovalna libela z elevacijskim vijakom)"], "premer1":"Zaščiten, 90 mm", "premer2":"Zaščiten, 90 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"20\'", "enota2":"20\'", "stMest1":"1", "stMest2":"1", "izvedba1":"Vijačni mikroskop", "izvedba2":"Vijačni mikroskop", "nonij1":"60", "nonij2":"60", "interval1":"20\'\'", "interval2":"20\'\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"/", "premerObjektiva":"40 mm", "povecava":"27 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Lakiran, vijaki očiščeni nov. 2016, barva se zaznavno razlikuje od originalne barve instrumenta" }, ' +
+            '{ "id":"23" , "vrsta":"Teodolit", "proizvajalec":"Wild" , "model":"N T2", "mere":"5,55; 15/14/27", "leto":"1954", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "Cevna libela postavljena centrično na alhidadi", "Zavarovalna libela"], "premer1":"Zaščiten, 90 mm", "premer2":"Zaščiten, 70 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"20\'", "enota2":"20\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Koincidenčni mikrometer", "izvedba2":"Koincidenčni mikrometer", "nonij1":"600", "nonij2":"600", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"Repeticijski vijak", "repeticija2":"/", "premerObjektiva":"40 mm", "povecava":"28 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen, delno lakiran nov. 2016, nova kapa objektiva daljnogleda" }, ' +
+            '{ "id":"32" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss Jena" , "model":"Th IV", "mere":"5,81; 19/14/26", "leto":"1939", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Cevna libela postavljena centrično na alhidadi", "Zavarovalna libela z elevacijskim vijakom", "Nivelacijska libela"], "premer1":"Zaščiten, 90 mm", "premer2":"Zaščiten, 70 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Skalni mikroskop", "izvedba2":"Skalni mikroskop", "nonij1":"60", "nonij2":"60", "interval1":"1\'", "interval2":"1\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"/", "premerObjektiva":"35 mm", "povecava":"28 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Popolnoma restavriran, lakiran dec. 2016; Barva se zaznavno razlikuje od originalne barve instrumenta" }, ' +
+            '{ "id":"33" , "vrsta":"Teodolit", "proizvajalec":"Wild" , "model":"T1", "mere":"4,75; 15/15/26", "leto":"1933/1948", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "V centru  cevna libela na alhidadi", "Zavarovalna libela na vertikalnem krogu"], "premer1":"Zaščiten, 78 mm", "premer2":"Zaščiten, 70 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Optični mikrometer", "izvedba2":"Optični mikrometer", "nonij1":"60", "nonij2":"60", "interval1":"1\', cenitev na 6\'\'", "interval2":"1\', cenitev na 6\'\'", "repeticija1":"Da", "repeticija2":"/", "premerObjektiva":"40 mm", "povecava":"27 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Popolnoma restavriran, lakiran dec. 2016; Barva je močnejše zelena in bolj svetleča od originalne barve instrumenta" }, ' +
+            '{ "id":"34" , "vrsta":"Teodolit", "proizvajalec":"Wild" , "model":"T3", "mere":"11,07; 26/19/36", "leto":"1934/1948", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "Cevna libela centrično na alhidadi", "Zavarovalna koincidenčna libela na vertikalnega kroga"], "premer1":"Zaščiten, 140 mm", "premer2":"Zaščiten, 95 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Centezimalna", "razdelba2":"Centezimalna", "enota1":"10<sup>C</sup>", "enota2":"10<sup>C</sup>", "stMest1":"1", "stMest2":"1", "izvedba1":"Optični mikrometer", "izvedba2":"Optični mikrometer", "nonij1":"1000", "nonij2":"1000", "interval1":"1<sup>C</sup>", "interval2":"1<sup>C</sup>", "repeticija1":"Repeticijski vijak", "repeticija2":"/", "premerObjektiva":"60 mm", "povecava":"24 x, 30 x, 40 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen, delno lakiran dec. 2016" }, ' +
+            '{ "id":"35" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss" , "model":"Theo 010", "mere":"5,55; 14/18/29", "leto":"1953", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "Cevna libela centričnio na alhidadi", "Zavarovalna indeks libela za postavitev indeksa vertikalnega kroga"], "premer1":"Zaščiten, 84 mm", "premer2":"Zaščiten, 60 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"1", "stMest2":"1", "izvedba1":"Klinasti optični mikrometer", "izvedba2":"Klinasti optični mikrometer", "nonij1":"600", "nonij2":"600", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"Da, vijak in zatič", "repeticija2":"/", "premerObjektiva":"53 mm", "povecava":"31 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"36" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss" , "model":"Theo 030", "mere":"3,96; 20/14/28", "leto":"1950", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Cevna libela centričnio na alhidadi", "Zavarovalna indeks libela na vertikalnem krogu"], "premer1":"Zaščiten, 94 mm", "premer2":"Zaščiten, 74 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Skalni mikroskop", "izvedba2":"Skalni mikroskop", "nonij1":"60", "nonij2":"60", "interval1":"1\'", "interval2":"1\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"/", "premerObjektiva":"35 mm", "povecava":"25 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen, delno lakiran (cevka mikroskopa) dec. 2016" }, ' +
+            '{ "id":"38" , "vrsta":"Teodolit", "proizvajalec":"MOM" , "model":"17B", "mere":"4,98; 18/16/27", "leto":"1945", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Dve pravokotni cevni libeli na alhidadi", "Precizna reverzibilna (obrnljiva) nivelacijska libela na daljnogledu", "Zavarovalna libela na nosilcu indeksov (indeksna libela)"], "premer1":"Zaščiten, 120 mm", "premer2":"Zaščiten, 90 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"Posrebreni kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"20\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Skalni mikroskop", "izvedba2":"Nonij", "nonij1":"30", "nonij2":"60", "interval1":"15\'\'", "interval2":"20\'\'", "repeticija1":"Da, privojni in mikrometrski vijak", "repeticija2":"/", "premerObjektiva":"30 mm", "povecava":"28 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100 in 200", "stanje": "Očiščen, spoliran vertikalni krog; dec. 2016" }, ' +
+            '{ "id":"45" , "vrsta":"Teodolit", "proizvajalec":"Carl Zeiss Jena" , "model":"Theo 010A", "mere":"4,40; 18/18/30", "leto":"1980", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator "], "premer1":"Zaščiten, 86 mm", "premer2":"Zaščiten, 86 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"2", "stMest2":"2", "izvedba1":"Koincidenčni mikrometer", "izvedba2":"Koincidenčni mikrometer", "nonij1":"600", "nonij2":"600", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"Da, mikrometrski in privojni vijak", "repeticija2":"/", "premerObjektiva":"40 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen, poškodbe lakirane; jan. 2017" }, ' +
+            '{ "id":"59" , "vrsta":"Teodolit z lasersko cevjo", "proizvajalec":"MOM" , "model":"Li-Te-B23, Li-T1", "mere":"5,22; 16/18/28", "leto":"1965", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Zavarovalna koincidenčna libela "], "premer1":"Zaščiten, 93 mm", "premer2":"Zaščiten, 60 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"1", "stMest2":"1", "izvedba1":"Koincidenčni mikrometer", "izvedba2":"Koincidenčni mikrometer", "nonij1":"600", "nonij2":"600", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"Da, zaščiten vijak", "repeticija2":"/", "premerObjektiva":"45 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"76" , "vrsta":"Teodolit", "proizvajalec":"Kern" , "model":"DKM2-A", "mere":"6,22; 18/18/24", "leto":"1971", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Kompenzator", "Cevna libela na alhidadi", "Prisilno horizontiranje na stativu"], "premer1":"Zaščiten, 75 mm", "premer2":"Zaščiten, 70 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"10\'", "enota2":"10\'", "stMest1":"1", "stMest2":"1", "izvedba1":"Optični koincidenčni mikrometer", "izvedba2":"Optični koincidenčni mikrometer", "nonij1":"600", "nonij2":"600", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"Da, vijaka za fini in grobi premik", "repeticija2":"/", "premerObjektiva":"45 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"83" , "vrsta":"Teodolit", "proizvajalec":"Kern" , "model":"E2", "mere":"8,60; 19/21/34", "leto":"1986", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Kompenzator", "Cevna libela na alhidadi"], "premer1":"Zaščiten, 70 mm", "premer2":"Zaščiten, 70 mm", "vrstaRazdelbe1":"Inkrementalna razdelba", "vrstaRazdelbe2":"Inkrementalna razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna ali centezimalna", "razdelba2":"Seksagezimalna ali centezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"Ne, možnost nastavitve vrednosti smeri na 0", "repeticija2":"/", "premerObjektiva":"45 mm", "povecava":"32 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"85" , "vrsta":"Teodolit", "proizvajalec":"Kern" , "model":"DKM2-AE", "mere":"6,14; 18/16/23", "leto":"Po 1971", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Optično grezilo", "Kompenzator", "Cevna libela na alhidadi", "Prisilno horizontiranje na stativu"], "premer1":"Zaščiten, 75 mm", "premer2":"Zaščiten, 70 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Optični koincidenčni mikrometer", "izvedba2":"Optični koincidenčni mikrometer", "nonij1":"600", "nonij2":"600", "interval1":"/", "interval2":"/", "repeticija1":"Da, vijaka za fini in grobi premik", "repeticija2":"/", "premerObjektiva":"45 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"93" , "vrsta":"Elektronski teodolit", "proizvajalec":"Leica" , "model":"T1800", "mere":"7,11; 25/27/37", "leto":"1996", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Lasersko grezilo", "Dozna libela", "Elektronska libela"], "premer1":"Zaščiten", "premer2":"Zaščiten", "vrstaRazdelbe1":"Kodirana razdelba", "vrstaRazdelbe2":"Kodirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"/", "interval2":"/", "repeticija1":"/", "repeticija2":"/", "premerObjektiva":"42 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"31" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"Breithaupt & Sohn, Kassel" , "model":"/", "serijska":"57655", "leto":"1920" }, ' +
+            '{ "id":"30" , "vrsta":"Nivelir brez daljnogleda", "proizvajalec":"E. Kraft & Sohn" , "model":"/", "serijska":"143", "leto":"1850" }]}';
+            var obj = JSON.parse(data);
+            var len = Object.values(obj.instrumenti).length;
+            for (var i = 0; i < len; i++) {
+                if (obj.instrumenti[i].id == id) {
+                    document.getElementById('evidencna').innerHTML = obj.instrumenti[i].id;
+                    document.getElementById('vrsta').innerHTML = obj.instrumenti[i].vrsta;
+                    document.getElementById('proizvajalec').innerHTML = obj.instrumenti[i].proizvajalec;
+                    document.getElementById('model').innerHTML = obj.instrumenti[i].model;
+                    document.getElementById('mere').innerHTML = obj.instrumenti[i].mere;
+                    document.getElementById('leto').innerHTML = obj.instrumenti[i].leto;
+                    document.getElementById('naslov').innerHTML = obj.instrumenti[i].naslov;
+                    var tabela = obj.instrumenti[i].tab;
+                    tabela.forEach(element => {
+                        document.getElementById("tabela").innerHTML += "- " + element + "<br>";
+                    });
+                    document.getElementById('premer1').innerHTML = obj.instrumenti[i].premer1;
+                    document.getElementById('premer2').innerHTML = obj.instrumenti[i].premer2;
+                    document.getElementById('vrstaRazdelbe1').innerHTML = obj.instrumenti[i].vrstaRazdelbe1;
+                    document.getElementById('vrstaRazdelbe2').innerHTML = obj.instrumenti[i].vrstaRazdelbe2;
+                    document.getElementById('nosilec1').innerHTML = obj.instrumenti[i].nosilec1;
+                    document.getElementById('nosilec2').innerHTML = obj.instrumenti[i].nosilec2;
+                    document.getElementById('razdelba1').innerHTML = obj.instrumenti[i].razdelba1;
+                    document.getElementById('razdelba2').innerHTML = obj.instrumenti[i].razdelba2;
+                    document.getElementById('enota1').innerHTML = obj.instrumenti[i].enota1;
+                    document.getElementById('enota2').innerHTML = obj.instrumenti[i].enota2;
+                    document.getElementById('stMest1').innerHTML = obj.instrumenti[i].stMest1;
+                    document.getElementById('stMest2').innerHTML = obj.instrumenti[i].stMest2;
+                    document.getElementById('izvedba1').innerHTML = obj.instrumenti[i].izvedba1;
+                    document.getElementById('izvedba2').innerHTML = obj.instrumenti[i].izvedba2;
+                    document.getElementById('nonij1').innerHTML = obj.instrumenti[i].nonij1;
+                    document.getElementById('nonij2').innerHTML = obj.instrumenti[i].nonij2;
+                    document.getElementById('interval1').innerHTML = obj.instrumenti[i].interval1;
+                    document.getElementById('interval2').innerHTML = obj.instrumenti[i].interval2;
+                    document.getElementById('repeticija1').innerHTML = obj.instrumenti[i].repeticija1;
+                    document.getElementById('repeticija2').innerHTML = obj.instrumenti[i].repeticija2;
+                    document.getElementById('premerObjektiva').innerHTML = obj.instrumenti[i].premerObjektiva;
+                    document.getElementById('povecava').innerHTML = obj.instrumenti[i].povecava;
+                    document.getElementById('tip').innerHTML = obj.instrumenti[i].tip;
+                    document.getElementById('kriz').innerHTML = obj.instrumenti[i].kriz;
+                    document.getElementById('stanje').innerHTML = obj.instrumenti[i].stanje;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

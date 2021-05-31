@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding: 50px;">
+            <h1 class="animate-reveal animate-first d-flex justify-content-center">Zbirka razdaljemerov</h1>
+        </div>
+          
+        
+        <div class="animate-reveal animate-second d-flex justify-content-center" style="padding: 150px;">
+          <table class="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Št.</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Proizvajalec</th>
+                  <th scope="col">Leto izvedbe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="prikaziStran(68)" class="razdaljemer">
+                  <th scope="row">68</th>
+                  <td>DI 3000S</td>
+                  <td>Leica Wild</td>
+                  <td>1998</td>
+                </tr>
+                <tr onclick="prikaziStran(92)" class="razdaljemer">
+                  <th scope="row">92</th>
+                  <td>3800B</td>
+                  <td>Hewlett Packard (HP)</td>
+                  <td>1969</td>
+                </tr>
+                <tr onclick="prikaziStran(70)" class="razdaljemer">
+                  <th scope="row">70</th>
+                  <td>DM502</td>
+                  <td>Kern</td>
+                  <td>1983</td>
+                </tr>
+                <tr onclick="prikaziStran(84)" class="razdaljemer">
+                  <th scope="row">84</th>
+                  <td>DM503</td>
+                  <td>Kern</td>
+                  <td>1986</td>
+                </tr>
+                <tr onclick="prikaziStran(86)" class="razdaljemer">
+                  <th scope="row">86</th>
+                  <td>Mekometer ME 3000</td>
+                  <td>Kern</td>
+                  <td>1972 (1980)</td>
+                </tr>
+                <tr onclick="prikaziStran(87)" class="razdaljemer">
+                  <th scope="row">87</th>
+                  <td>Mekometer ME 5000</td>
+                  <td>Kern</td>
+                  <td>Do 1990 (1989)</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </body>
+</html>

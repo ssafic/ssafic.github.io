@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010; width: auto;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding-top: 50px;" class="container justify-content-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-5">
+                    <img src="" id="slika">
+                </div>
+        
+                <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th scope="row">Evidenčna številka</th>
+                            <td id="evidencna"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta instrumenta</th>
+                            <td id="vrsta"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Proizvajalec</th>
+                            <td id="proizvajalec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Model</th>
+                            <td id="model"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Masa[kg]; mere d/š/v[cm]</th>
+                            <td id="mere"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leto izdelave</th>
+                            <td id="leto"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col" id="naslov"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="tabela"></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col"></th>
+                            <th scope="col">Horizontalni krog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Premer</th>
+                            <td id="premer"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta razdelbe</th>
+                            <td id="vrstaRazdelbe"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nosilec</th>
+                            <td id="nosilec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Razdelba</th>
+                            <td id="razdelba"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enota</th>
+                            <td id="enota"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Čitanje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število mest</th>
+                            <td id="stMest"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Izvedba</th>
+                            <td id="izvedba"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število enot</th>
+                            <td id="nonij"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Osnovni interval</th>
+                            <td id="interval"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion1" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Daljnogled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Premer objektiva</th>
+                            <td id="premerObjektiva"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Povečava</th>
+                            <td id="povecava"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Tip</th>
+                            <td id="tip"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Nitni križ</th>
+                            <td id="kriz"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <b>Stanje instrumenta: </b>
+            <p id="stanje"></p>
+            <br>
+        </div>
+
+        <script>
+            var url = window.location.href;
+            var n = url.length;
+            var id = url.slice(50, n);
+            document.getElementById('slika').src = "img/instrument_" + id + ".png";
+            var data = '{ "instrumenti" : [' +
+            '{ "id":"31" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"Breithaupt & Sohn, Kassel" , "model":"/", "mere":"3,64; 34/15/19", "leto":"1920", "naslov": "Postavitev instrumenta", "tab":["Nivelacijska libela", "Brez elevacijskega vijaka in dozne libele"], "premer": "Nezaščiten, 14 cm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Posrebreni kovinski nosilec", "razdelba": "Seksagezimalna", "enota" : "30\'", "stMest": "1", "izvedba" : "Nonij", "nonij": "30", "interval" : "1\'", "premerObjektiva": "30 mm", "povecava": "/", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen, delno lakiran nov. 2016" }, ' +
+            '{ "id":"8" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"R & A Rost Wien" , "model":"/", "mere":"3,8; 38/17/20", "leto":"Začetek 20. stoletja", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Nivelacijska libela ob daljnogledu", "Elevacijski vijak pod na sprednji strani nosilca daljnogleda"], "premer": "Nezaščiten, odprt, 10 cm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Posrebreni kovinski nosilec", "razdelba": "Seksagezimalna", "enota" : "20\'", "stMest": "1", "izvedba" : "Nonij", "nonij": "20", "interval" : "1\'", "premerObjektiva": "27 mm", "povecava": "/", "tip": "Ramsendov izvlečljivi okular", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Popolnoma restavriran okt. 2016" }, ' +
+            '{ "id":"12" , "vrsta":"Nivelir", "proizvajalec":"Carl Zeiss" , "model":"Ni III", "mere":"/", "leto":"1934", "naslov": "Postavitev instrumenta, posebnosti", "tab":["Dozna libela", "Koincidenčna reverzibilna nivelacijska libela", "Elevacijski vijak z razdelbo"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "45 mm", "povecava": "36 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Nitni križ preciznih nivelirjev; Reichebachov razdaljemer, konstanta 100", "stanje": "Restavriran, delno lakiran okt. 2016" }, ' +
+            '{ "id":"15" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"Neuhőfer & Sohn Wien" , "model":"/", "mere":"3,79; 38/17/22", "leto":"1890", "naslov": "Postavitev instrumenta - posebnosti", "tab":["Dve med sabo pravokotni cevni libeli", "Nivelacijska libela ob daljnogledu", "Elevacijski vijak z razdelbo, na nosilcu 40 enot, na bobniču 100 enot, zasuk vijaka za eno enoto pomeni spremembo nagiba vizure za 6,6\'\', enota razdelbe vijaka predstavlja konstanto dolžine 300"], "premer": "Nezaščiten, 11 cm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Posrebreni kovinski nosilec", "razdelba": "Seksagezimalna", "enota" : "20\'", "stMest": "1", "izvedba" : "Nonij", "nonij": "20", "interval" : "1\'", "premerObjektiva": "30 mm", "povecava": "/", "tip": "Ramsendov izvlečljivi okular", "kriz": "Reichenbachov nitni križ", "stanje": "Popolnoma restavriran nov. 2016, očiščen in lakiran, dodan leseni podstavek" }, ' +
+            '{ "id":"21" , "vrsta":"Nivelir", "proizvajalec":"Otto Fennel & Söhne, Kassel" , "model":"/", "mere":"2,28; 24/10/14", "leto":"1900", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Koincidenčna reverzibilna nivelacijska libela (vidna v okularju daljnogleda)", "Elevacijski vijak"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "36 mm", "povecava": "/", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Lakiran in poliran nov. 2016, barva je svetlejša od originalne barve instrumenta" }, ' +
+            '{ "id":"26" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"Hildebrand – Reiss Wichmann" , "model":"/", "mere":"1,8; 19/14/13", "leto":"1930", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Koincidenčna libela"], "premer": "Zaščiten, 10,5 cm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Posrebreni kovinski nosilec", "razdelba": "Centezimalna", "enota" : "50<sup>C</sup>", "stMest": "1", "izvedba" : "Lupa z mikrometrsko razdelbo", "nonij": "50", "interval" : "1<sup>C</sup>", "premerObjektiva": "30 mm", "povecava": "/", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"27" , "vrsta":"Nivelir", "proizvajalec":"Carl Zeiss Jena" , "model":"Ni B", "mere":"/", "leto":"1946", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Koincidenčna nivelacijska libela z mikroskopom", "Elevacijski vijak"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "35 mm", "povecava": "31 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen dec. 2016, delno lakiran, novo zrcalo koincidenčne libele" }, ' +
+            '{ "id":"29" , "vrsta":"Nivelir", "proizvajalec":"Hildebrand–Reiss-Wichmann-Werke" , "model":"/", "mere":"2,32; 32/14/29", "leto":"1900", "naslov": "Postavitev instrumenta", "tab":["Nivelacijska libela", "Brez elevacijskega vijaka in dozne libele"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "30 mm", "povecava": "/", "tip": "Ramsdenov izvlečljivi okular", "kriz": "Enojna horizontalna in enojna vertikalna nit", "stanje": "Popolnoma restavriran, lakiran dec. 2016; barva instrumenta se zaznavno razlikuje od originalne barve – je svetlejša." }, ' +
+            '{ "id":"39" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"Officine Galileo" , "model":"Tipo m", "mere":"2,9; 19/11/15", "leto":"1950", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Koincidenčna nivelacijska ob daljnogledu, obrnljiva skupaj z daljnogledom, elevacijski vijak"], "premer": "Nezaščiten, 75 mm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Stekleni nosilec", "razdelba": "Seksagezimalna", "enota" : "1<sup>o</sup>", "stMest": "1", "izvedba" : "Črtni mikroskop", "nonij": "/", "interval" : "1<sup>o</sup> cenitev 0.1<sup>o</sup>", "premerObjektiva": "40 mm", "povecava": "/", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Očiščen, instrumenta ni mogoče zavrteti okrog stojišče osi; dec. 2016" }, ' +
+            '{ "id":"51" , "vrsta":"Nivelir", "proizvajalec":"Carl Zeiss Jena" , "model":"Ni 030", "mere":"2,01; 24/11/15", "leto":"1950", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Koincidenčna reverzibilna nivelacijska libela", "Elevacijski vijak", "Planparalelna plošča z optičnim mikrometrom"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "35 mm", "povecava": "25 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Klinasti nitni križ z distančnimi nitmi, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"54" , "vrsta":"Precizni nivelir", "proizvajalec":"Carl Zeiss Jena" , "model":"Ni 004", "mere":"6,7; 43/14/21", "leto":"1953", "naslov": "Postavitev instrumenta", "tab":["Dve pravokotni cevni libeli", "Koincidenčna nivelacijska libela v daljnogledu", "Planparalelna plošča z mikrometrom", "Mikrometer s planparalelno ploščo"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "56 mm", "povecava": "44 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Klinasti nitni križ z distančnimi nitmi, konstanta 100 (klin na levi in desni strani)", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"58" , "vrsta":"Precizni nivelir", "proizvajalec":"MOM" , "model":"NI–A3", "mere":"3,22; 26/14/21", "leto":"1960", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Kompenzator"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "67 mm", "povecava": "30x, 40x, 50x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Klinasti nitni križ z distančnimi nitmi, konstanta 100, natančnost 0.2 mm", "stanje": "Očiščen, poškodbe lakirane; dec. 2016" }, ' +
+            '{ "id":"60" , "vrsta":"Nivelir s hz. krogom", "proizvajalec":"MOM" , "model":"Ni-B3", "mere":"2,05; 27/13/13", "leto":"1960", "naslov": "Postavitev instrumenta", "tab":["Dozna libela s pokrovom", "Kompenzator"], "premer": "Zaščiten, 82 mm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Stekleni nosilec", "razdelba": "Seksagezimalna", "enota" : "1<sup>o</sup>", "stMest": "1", "izvedba" : "Optični mikrometer", "nonij": "6", "interval" : "10\', cenitev 1\'", "premerObjektiva": "45 mm", "povecava": "28x, 32x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Klinasti nitni križ z distančnima nitma, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"62" , "vrsta":"Precizni nivelir s hz. krogom", "proizvajalec":"Carl Zeiss Jena" , "model":"Koni 007", "mere":"4,19; 13/14/33", "leto":"1960", "naslov": "Postavitev instrumenta", "tab":["Zaščitena dozna libela", "Kompenzator", "Mikrometer s pentagonalno prizmo"], "premer": "Zaščiten, 53,4 mm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Stekleni nosilec", "razdelba": "Seksagezimalna", "enota" : "10\', natančnost 0,5 mm do 0,8 mm na km dvojnega nivelmana", "stMest": "1", "izvedba" : "Črtni mikroskop", "nonij": "/", "interval" : "/", "premerObjektiva": "40 mm", "povecava": "30,5 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Klinasti nitni križ z distančnima nitma, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"64" , "vrsta":"Digitalni nivelir", "proizvajalec":"Wild" , "model":"NA 3000", "mere":"2,49; 22/18/15", "leto":"1992", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Kompenzator"], "premer": "Nezaščiten, 110 mm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Kovinski nosilec", "razdelba": "Seksagezimalna", "enota" : "1<sup>o</sup>", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "36 mm", "povecava": "24 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Osnovni horizontalna in vertikalna nit in distančni niti, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"73" , "vrsta":"Digitalni nivelir", "proizvajalec":"Zeiss Oberkochen" , "model":"DiNi10", "mere":"3,23; 28/17/19", "leto":"1996", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Kompenzator"], "premer": "Nezaščiten, 12 cm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Kovinski nosilec", "razdelba": "Centezimalna", "enota" : "1 gon, cenitev 0,1 gon", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "42 mm", "povecava": "16 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, konstanta 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"75" , "vrsta":"Nivelir - Astrolab", "proizvajalec":"Zeiss Oberkochen" , "model":"NI 2", "mere":"3,7; 33/13/18", "leto":"1951", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Kompenzator", "Nastavek za astronomske meritve z libelo", "Svetilo za nitni križ (manjka)"], "premer": "Zaščiten, 80 mm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Stekleni nosilec", "razdelba": "Seksagezimalna", "enota" : "1<sup>o</sup>", "stMest": "1", "izvedba" : "Optični mikrometer", "nonij": "6", "interval" : "10\'", "premerObjektiva": "40 mm", "povecava": "32 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Vgrajen poseben nitni križ za astronomske meritve", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe, manjka za osvetlitev nitnega križa" }, ' +
+            '{ "id":"77" , "vrsta":"Nivelir", "proizvajalec":"Kern" , "model":"GK0-A", "mere":"1,92; 19/11/12", "leto":"1971", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Kompenzator"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "30 mm", "povecava": "21 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, natančnost 2,5 mm na 1 km dvojnega nivelmana", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"78" , "vrsta":"Nivelir", "proizvajalec":"Kern" , "model":"GK1-A", "mere":"1,64; 15/11/14", "leto":"1963", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Kompenzator"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "45 mm", "povecava": "25 x", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "Reichenbachov nitni križ, natančnost 1,5 mm na 1 km dvojnega nivelmana", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"88" , "vrsta":"Laserski nivelir / laserska usmerjevalna naprava", "proizvajalec":"Carl Zeiss" , "model":"LFG 1", "mere":"10,2; 53/14/36", "leto":"1970", "naslov": "Postavitev instrumenta", "tab":["Dozna libela", "Cevna libela", "Kompenzator", "Mikrometer za nastavljanje nagiba laserskega žarka"], "premer": "Nezaščiten", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Kovinski nosilec", "razdelba": "Seksagezimalna", "enota" : "1<sup>o</sup>", "stMest": "1", "izvedba" : "Čitanje neposredno z razdelbe", "nonij": "/", "interval" : "/", "premerObjektiva": "32 mm", "povecava": "/", "tip": "Daljnogled z notranjim fokusiranjem", "kriz": "/", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"91" , "vrsta":"Precizni nivelir", "proizvajalec":"Carl Zeiss Jena" , "model":"Ni 002", "mere":"6,71; 32/16/32", "leto":"1973", "naslov": "Postavitev instrumenta", "tab":["Zaščitena dozna libela z  zrcalom", "Kompenzator – zrcalo na nihalu, dve legi", "Vijačni mikrometer s 100 enotami"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "55 mm", "povecava": "40 x", "tip": "Daljnogled z notranjim fokusiranjem, vrtljivi okular", "kriz": "Vertikalna in horizontalna nit, distančni niti, klin na desni strani", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"30" , "vrsta":"Nivelir brez daljnogleda", "proizvajalec":"E. Kraft & Sohn" , "model":"/", "mere":"143", "leto":"1850", "naslov": "Postavitev instrumenta", "tab":["Precizna cevna nivelacijska libela", "Prečna cevna libela", "Elevacijski vijak", "Privojni nijak prečnega nagiba"], "premer": "/", "vrstaRazdelbe": "/", "nosilec": "/", "razdelba": "/", "enota" : "/", "stMest": "/", "izvedba" : "/", "nonij": "/", "interval" : "/", "premerObjektiva": "/", "povecava": "/", "tip": "Nitna križa na obeh straneh", "kriz": "Horizontalna in vertikalna nit napeti na stojalu, drugi del je odprtina za viziranje, oboje na obeh straneh", "stanje": "Restavriran, delno lakiran; vgrajene nove nitke dec. 2016; dodan leseni podstavek" }]}';
+            var obj = JSON.parse(data);
+            var len = Object.values(obj.instrumenti).length;
+            for (var i = 0; i < len; i++) {
+                if (obj.instrumenti[i].id == id) {
+                    document.getElementById('evidencna').innerHTML = obj.instrumenti[i].id;
+                    document.getElementById('vrsta').innerHTML = obj.instrumenti[i].vrsta;
+                    document.getElementById('proizvajalec').innerHTML = obj.instrumenti[i].proizvajalec;
+                    document.getElementById('model').innerHTML = obj.instrumenti[i].model;
+                    document.getElementById('mere').innerHTML = obj.instrumenti[i].mere;
+                    document.getElementById('leto').innerHTML = obj.instrumenti[i].leto;
+                    document.getElementById('naslov').innerHTML = obj.instrumenti[i].naslov;
+                    var tabela = obj.instrumenti[i].tab;
+                    tabela.forEach(element => {
+                        document.getElementById("tabela").innerHTML += "- " + element + "<br>";
+                    });
+                    document.getElementById('premer').innerHTML = obj.instrumenti[i].premer;
+                    document.getElementById('vrstaRazdelbe').innerHTML = obj.instrumenti[i].vrstaRazdelbe;
+                    document.getElementById('nosilec').innerHTML = obj.instrumenti[i].nosilec;
+                    document.getElementById('razdelba').innerHTML = obj.instrumenti[i].razdelba;
+                    document.getElementById('enota').innerHTML = obj.instrumenti[i].enota;
+                    document.getElementById('stMest').innerHTML = obj.instrumenti[i].stMest;
+                    document.getElementById('izvedba').innerHTML = obj.instrumenti[i].izvedba;
+                    document.getElementById('nonij').innerHTML = obj.instrumenti[i].nonij;
+                    document.getElementById('interval').innerHTML = obj.instrumenti[i].interval;
+                    document.getElementById('premerObjektiva').innerHTML = obj.instrumenti[i].premerObjektiva;
+                    document.getElementById('povecava').innerHTML = obj.instrumenti[i].povecava;
+                    document.getElementById('tip').innerHTML = obj.instrumenti[i].tip;
+                    document.getElementById('kriz').innerHTML = obj.instrumenti[i].kriz;
+                    document.getElementById('stanje').innerHTML = obj.instrumenti[i].stanje;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

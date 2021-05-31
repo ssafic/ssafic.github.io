@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010; width: auto;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding-top: 50px;" class="container justify-content-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-5">
+                    <img src="" id="slika">
+                </div>
+        
+                <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th scope="row">Evidenčna številka</th>
+                            <td id="evidencna"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta instrumenta</th>
+                            <td id="vrsta"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Proizvajalec</th>
+                            <td id="proizvajalec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Model</th>
+                            <td id="model"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Masa[kg]; mere d/š/v[cm]</th>
+                            <td id="mere"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leto izdelave</th>
+                            <td id="leto"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col" id="naslov"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="tabela"></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col"></th>
+                            <th scope="col">Horizontalni krog</th>
+                            <th scope="col">Vertikalni krog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Premer</th>
+                            <td id="premer1"></td>
+                            <td id="premer2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta razdelbe</th>
+                            <td id="vrstaRazdelbe1"></td>
+                            <td id="vrstaRazdelbe2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nosilec</th>
+                            <td id="nosilec1"></td>
+                            <td id="nosilec2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Razdelba</th>
+                            <td id="razdelba1"></td>
+                            <td id="razdelba2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enota</th>
+                            <td id="enota1"></td>
+                            <td id="enota2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Čitanje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število mest</th>
+                            <td id="stMest1"></td>
+                            <td id="stMest2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Izvedba</th>
+                            <td id="izvedba1"></td>
+                            <td id="izvedba2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število enot</th>
+                            <td id="nonij1"></td>
+                            <td id="nonij2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Osnovni interval</th>
+                            <td id="interval1"></td>
+                            <td id="interval2"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Repeticija</th>
+                            <td id="repeticija1"></td>
+                            <td id="repeticija2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion1" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Merjenje dolžin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Princip</th>
+                            <td id="princip"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Natančnost</th>
+                            <td id="natancnost"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion2" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Daljnogled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion2" class="collapse">
+                            <th scope="row">Premer objektiva</th>
+                            <td id="premerObjektiva"></td>
+                        </tr>
+                        <tr id="accordion2" class="collapse">
+                            <th scope="row">Povečava</th>
+                            <td id="povecava"></td>
+                        </tr>
+                        <tr id="accordion2" class="collapse">
+                            <th scope="row">Tip</th>
+                            <td id="tip"></td>
+                        </tr>
+                        <tr id="accordion2" class="collapse">
+                            <th scope="row">Nitni križ</th>
+                            <td id="kriz"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <b>Stanje instrumenta: </b>
+            <p id="stanje"></p>
+            <br>
+        </div>
+        
+        <script>
+            var url = window.location.href;
+            var n = url.length;
+            var id = url.slice(52, n);
+            document.getElementById('slika').src = "img/instrument_" + id + ".png";
+            var data = '{ "instrumenti" : [' +
+            '{ "id":"37" , "vrsta":"Avtoredukcijski tahimeter", "proizvajalec":"Carl Zeiss Jena" , "model":"Redta 002", "mere":"6,60; 30/18/30", "leto":"1951", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Cevna libela na alhidadi", "Koincidenčna libela za vertikalni krog"], "premer1":"Zaščiten, 114 mm", "premer2":"Zaščiten, 74 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Optični mikrometer", "izvedba2":"Optični mikrometer", "nonij1":"60", "nonij2":"60", "interval1":"1\', cenjenje 6\'\'", "interval2":"1\', cenjenje 6\'\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"/", "princip":"Optični razdaljemer z dvojno sliko – paralaktični trikotnik s spremenljivim kotom in bazo na horizontalni lati na cilju", "natancnost":"2 cm / 100 m", "premerObjektiva":"42 mm", "povecava":"25 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna horizontalna in vertikalna nit, distančni niti, konstanta 100, dodatni vertikalni niti za merjenje s posebno horizontalno lato", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"18" , "vrsta":"Avtoredukcijski tahimeter", "proizvajalec":"Otto Fennel & Söhne, Kassel" , "model":"/", "mere":"7,05; 45/22/29", "leto":"1890", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dve pravokotni cevni libeli na alhidadi", "Precizna nivelacijska libela na daljnogledu", "Kompas na alhidadi"], "premer1":"Zaščiten, 15 cm", "premer2":"/", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"/", "nosilec1":"Posrebreni kovinski nosilec", "nosilec2":"/", "razdelba1":"Seksagezimalna", "razdelba2":"/", "enota1":"10\'", "enota2":"/", "stMest1":"2", "stMest2":"/", "izvedba1":"Črtni mikroskop", "izvedba2":"/", "nonij1":"Ni dodatne razdelba", "nonij2":"/", "interval1":"10\', cenitev 1\'", "interval2":"/", "repeticija1":"Privojni in mikrometrski vijak", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"40 mm", "povecava":"/", "tip":"Ramsdenov izvlečljivi okular", "kriz":"Polovico slike objektiva zavzema diagram z osnovno, višinskimi in distančno nitjo – direktno branje reduciranih dolžin, konstanta 100 in višinskih razlik", "stanje": "Popolnoma restavriran, nov. 2016; mikrometrski vijak nagiba daljnogleda ne deluje" }, ' +
+            '{ "id":"52" , "vrsta":"Avtoredukcijski tahimeter z bazo", "proizvajalec":"Carl Zeiss Jena" , "model":"BRT 006", "mere":"6,66; 15/58/26", "leto":"1960", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Zavarovalna libela"], "premer1":"Zaščiten, 90 mm", "premer2":"Nezaščiten, 90 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Skalni mikroskop", "izvedba2":"Skalni mikroskop", "nonij1":"12", "nonij2":"12", "interval1":"5\', natančnost 15\'\'", "interval2":"5\', natančnost 15\'\'", "repeticija1":"Da, vijak in zatič", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"25 mm", "povecava":"15 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Tri vertikalne niti, horizontalno slika razdeljena na dva dela", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"53" , "vrsta":"Avtoredukcijski tahimeter z bazo", "proizvajalec":"Carl Zeiss Jena" , "model":"Teletop 6x", "mere":"2,4; 20/53/20", "leto":"1957", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Dozna libela", "Nivelacijska libela"], "premer1":"Zaščiten, 59 mm -busola", "premer2":"Nezaščiten, 85 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Črtni mikroskop", "izvedba2":"Direktno čitanje", "nonij1":"/", "nonij2":"/", "interval1":"1°, cenitev 0,1°", "interval2":"1°, cenitev 0,1°", "repeticija1":"Ne", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"20 mm", "povecava":"6 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Ena vertikalna nit, horizontalna slika razdeljena na dva dela", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"56" , "vrsta":"Avtoredukcijski tahimeter s kartirno mizo Karti", "proizvajalec":"Carl Zeiss Jena" , "model":"Dahlta 010; Karti", "mere":"4,46; 22/16/27" , "leto":"1968; 1965" , "naslov":"Centriranje in horizontiranje instrumenta" , "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten, 96 mm", "premer2":"Nezaščiten, 74 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Skalni mikroskop", "izvedba2":"Skalni mikroskop", "nonij1":"60", "nonij2":"60", "interval1":"1\', cenitev 6\'\'", "interval2":"1\', cenitev 6\'\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"40 mm", "povecava":"25 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna črta, dolžinski krivulji, s koeficientoma 100 in 200, 4 višinske krivulje s koeficienti 10, 20, 50, 100", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"67" , "vrsta":"Avtoredukcijski tahimeter", "proizvajalec":"Carl Zeiss Jena" , "model":"Dahlta 010A", "mere":"4,48; 23/21/30" , "leto":"1979" , "naslov":"Centriranje in horizontiranje instrumenta" , "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten, 86 mm", "premer2":"Zaščiten, 86 mm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"1", "stMest2":"1", "izvedba1":"Skalni mikroskop", "izvedba2":"Skalni mikroskop", "nonij1":"60", "nonij2":"60", "interval1":"1\', cenitev 6\'\'", "interval2":"1\', cenitev 6\'\'", "repeticija1":"Da, Mahlerjeva membrana", "repeticija2":"Ob vertikalnem krogu ima tudi dodatno razdelbo za tangens kota", "princip":"/", "natancnost":"/", "premerObjektiva":"40 mm", "povecava":"25 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna nit, vertikalna nit, distančna in višinske niti v prvi krožni legi", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"71" , "vrsta":"Tahimeter", "proizvajalec":"Leica Wild" , "model":"TC2002", "mere":"9,12; 24/26/38" , "leto":"1993" , "naslov":"Centriranje in horizontiranje instrumenta" , "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten, 52 mm", "premer2":"Zaščiten, 52 mm", "vrstaRazdelbe1":"Inkrementalna razdelba, dinamični način", "vrstaRazdelbe2":"Inkrementalna razdelba, dinamični način", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna ali centezimalna", "razdelba2":"Seksagezimalna ali centezimalna", "enota1":"1024 svetlih in temnih polj", "enota2":"1024 svetlih in temnih polj", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"0,15 mgon ali 0,5\'\'", "interval2":"0,15 mgon ali 0,5\'\'", "repeticija1":"/", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"42 mm", "povecava":"30x, 44x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna hz. in vt. nit", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"74" , "vrsta":"Tahimeter", "proizvajalec":"Leica Wild" , "model":"TC1010", "mere":"6,5; 22/20/37" , "leto":"1990" , "naslov":"Centriranje in horizontiranje instrumenta" , "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten, 52 mm", "premer2":"Zaščiten, 52 mm", "vrstaRazdelbe1":"kodirana razdelba, absolutni postopek", "vrstaRazdelbe2":"kodirana razdelba, absolutni postopek", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna ali centezimalna", "razdelba2":"Seksagezimalna ali centezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"1 mgon ali 3\'\'", "interval2":"1 mgon ali 3\'\'", "repeticija1":"/", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"42 mm", "povecava":"30x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna hz. in vt. nit", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"89" , "vrsta":"Tahimeter", "proizvajalec":"Carl Zeiss Jena" , "model":"EOT 2000", "mere":"10,76; 24/26/47" , "leto":"1975" , "naslov":"Centriranje in horizontiranje instrumenta" , "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten", "premer2":"Zaščiten", "vrstaRazdelbe1":"Vgravirana razdelba, koincidiranje", "vrstaRazdelbe2":"Vgravirana razdelba, koincidiranje", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Koincidenčni mikrometer", "izvedba2":"Koincidenčni mikrometer", "nonij1":"/", "nonij2":"/", "interval1":"1\'\'", "interval2":"1\'\'", "repeticija1":"/", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"40 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna hz. in vt. nit", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"94" , "vrsta":"Precizni elektronski tahimeter", "proizvajalec":"Leica Wild" , "model":"TC2003", "mere":"8,15; 23/24/37" , "leto":"1998" , "naslov":"Centriranje in horizontiranje instrumenta" , "tab":["Optično grezilo", "Dozna libela", "Cevna libela na alhidadi", "Kompenzator"], "premer1":"Zaščiten", "premer2":"Zaščiten", "vrstaRazdelbe1":"Kodirana razdelba", "vrstaRazdelbe2":"Kodirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna ali centezimalna", "razdelba2":"Seksagezimalna ali centezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"0,15 mgon ali 0,5\'\'", "interval2":"0,15 mgon ali 0,5\'\'", "repeticija1":"/", "repeticija2":"/", "princip":"/", "natancnost":"/", "premerObjektiva":"42 mm", "povecava":"30 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna hz. in vt. nit", "stanje": "Instrument je v stanju kot je bil ob prenehanju njegove uporabe" }, ' +
+            '{ "id":"96" , "vrsta":"Elektronski tahimeter", "proizvajalec":"Leica" , "model":"TC605L", "mere":"5,05; 19/24/38", "leto":"2001", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Lasersko grezilo", "Dozna libela", "Elektronska libela", "Kompenzator"], "premer1":"Zaščiten", "premer2":"Zaščiten", "vrstaRazdelbe1":"Kodirana razdelba", "vrstaRazdelbe2":"Kodirana razdelba", "nosilec1":"Stekleni nosilec", "nosilec2":"Stekleni nosilec", "razdelba1":"Seksagezimalna ali centezimalna", "razdelba2":"Seksagezimalna ali centezimalna", "enota1":"/", "enota2":"/", "stMest1":"1", "stMest2":"1", "izvedba1":"Izpis na zaslonu", "izvedba2":"Izpis na zaslonu", "nonij1":"/", "nonij2":"/", "interval1":"/", "interval2":"/", "repeticija1":"/", "repeticija2":"/", "princip":"/", "natancnost":"3 mm; 3 ppm,  4 sekunde", "premerObjektiva":"28 mm", "povecava":"28 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Osnovna hz. in vt. nit", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }]}';
+            var obj = JSON.parse(data);
+            var len = Object.values(obj.instrumenti).length;
+            for (var i = 0; i < len; i++) {
+                if (obj.instrumenti[i].id == id) {
+                    document.getElementById('evidencna').innerHTML = obj.instrumenti[i].id;
+                    document.getElementById('vrsta').innerHTML = obj.instrumenti[i].vrsta;
+                    document.getElementById('proizvajalec').innerHTML = obj.instrumenti[i].proizvajalec;
+                    document.getElementById('model').innerHTML = obj.instrumenti[i].model;
+                    document.getElementById('mere').innerHTML = obj.instrumenti[i].mere;
+                    document.getElementById('leto').innerHTML = obj.instrumenti[i].leto;
+                    document.getElementById('naslov').innerHTML = obj.instrumenti[i].naslov;
+                    var tabela = obj.instrumenti[i].tab;
+                    tabela.forEach(element => {
+                        document.getElementById("tabela").innerHTML += "- " + element + "<br>";
+                    });
+                    document.getElementById('premer1').innerHTML = obj.instrumenti[i].premer1;
+                    document.getElementById('premer2').innerHTML = obj.instrumenti[i].premer2;
+                    document.getElementById('vrstaRazdelbe1').innerHTML = obj.instrumenti[i].vrstaRazdelbe1;
+                    document.getElementById('vrstaRazdelbe2').innerHTML = obj.instrumenti[i].vrstaRazdelbe2;
+                    document.getElementById('nosilec1').innerHTML = obj.instrumenti[i].nosilec1;
+                    document.getElementById('nosilec2').innerHTML = obj.instrumenti[i].nosilec2;
+                    document.getElementById('razdelba1').innerHTML = obj.instrumenti[i].razdelba1;
+                    document.getElementById('razdelba2').innerHTML = obj.instrumenti[i].razdelba2;
+                    document.getElementById('enota1').innerHTML = obj.instrumenti[i].enota1;
+                    document.getElementById('enota2').innerHTML = obj.instrumenti[i].enota2;
+                    document.getElementById('stMest1').innerHTML = obj.instrumenti[i].stMest1;
+                    document.getElementById('stMest2').innerHTML = obj.instrumenti[i].stMest2;
+                    document.getElementById('izvedba1').innerHTML = obj.instrumenti[i].izvedba1;
+                    document.getElementById('izvedba2').innerHTML = obj.instrumenti[i].izvedba2;
+                    document.getElementById('nonij1').innerHTML = obj.instrumenti[i].nonij1;
+                    document.getElementById('nonij2').innerHTML = obj.instrumenti[i].nonij2;
+                    document.getElementById('interval1').innerHTML = obj.instrumenti[i].interval1;
+                    document.getElementById('interval2').innerHTML = obj.instrumenti[i].interval2;
+                    document.getElementById('repeticija1').innerHTML = obj.instrumenti[i].repeticija1;
+                    document.getElementById('repeticija2').innerHTML = obj.instrumenti[i].repeticija2;
+                    document.getElementById('princip').innerHTML = obj.instrumenti[i].princip;
+                    document.getElementById('natancnost').innerHTML = obj.instrumenti[i].natancnost;
+                    document.getElementById('premerObjektiva').innerHTML = obj.instrumenti[i].premerObjektiva;
+                    document.getElementById('povecava').innerHTML = obj.instrumenti[i].povecava;
+                    document.getElementById('tip').innerHTML = obj.instrumenti[i].tip;
+                    document.getElementById('kriz').innerHTML = obj.instrumenti[i].kriz;
+                    document.getElementById('stanje').innerHTML = obj.instrumenti[i].stanje;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

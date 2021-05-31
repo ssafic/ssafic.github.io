@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010; width: auto;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link active" href="zbirka.html">Zbirka</a>
+                <a class="nav-item nav-link active" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding-top: 50px;" class="container justify-content-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-5">
+                    <img src="" id="slika" style="height: auto; width: 100%;">
+                </div>
+        
+                <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th scope="row">Evidenčna številka</th>
+                            <td id="evidencna"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta instrumenta</th>
+                            <td id="vrsta"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Proizvajalec</th>
+                            <td id="proizvajalec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Model</th>
+                            <td id="model"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Masa[kg]; mere d/š/v[cm]</th>
+                            <td id="mere"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leto izdelave</th>
+                            <td id="leto"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col" id="naslov"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="tabela"></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr style="background-color: #ff6666;">
+                            <th scope="col"></th>
+                            <th scope="col">Vertikalni krog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Premer</th>
+                            <td id="premer"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vrsta razdelbe</th>
+                            <td id="vrstaRazdelbe"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nosilec</th>
+                            <td id="nosilec"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Razdelba</th>
+                            <td id="razdelba"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enota</th>
+                            <td id="enota"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Čitanje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število mest</th>
+                            <td id="stMest"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Izvedba</th>
+                            <td id="izvedba"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Število enot</th>
+                            <td id="nonij"></td>
+                        </tr>
+                        <tr id="accordion" class="collapse">
+                            <th scope="row">Osnovni interval</th>
+                            <td id="interval"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr data-toggle="collapse" data-target="#accordion1" class="clickable" style="background-color: #ff6666;">
+                            <th scope="col">Daljnogled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Premer objektiva</th>
+                            <td id="premerObjektiva"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Povečava</th>
+                            <td id="povecava"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Tip</th>
+                            <td id="tip"></td>
+                        </tr>
+                        <tr id="accordion1" class="collapse">
+                            <th scope="row">Nitni križ</th>
+                            <td id="kriz"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <b>Stanje instrumenta: </b>
+            <p id="stanje"></p>
+            <br>
+        </div>
+
+        <script>
+            var url = window.location.href;
+            var n = url.length;
+            var id = url.slice(51, n);
+            document.getElementById('slika').src = "img/instrument_" + id + ".png";
+            var data = '{ "instrumenti" : [' +
+            '{ "id":"44" , "vrsta":"Sekstant", "proizvajalec":"Josh Semalvico London" , "model":"/", "mere":"1,35; 31/12/25", "leto":"1890", "naslov": "Postavitev instrumenta", "tab":["Ob neuporabi je na treh nogicah", "Ročaj, pri meritvah se ga drži v roki"], "premer": "Nezaščiten, del kroga z razdelbo od 0° do 140°", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Posrebreni kovinski nosilec", "razdelba": "Seksagezimalna", "enota" : "15\'", "stMest": "1", "izvedba" : "Nonij", "nonij": "60", "interval" : "15\'\'", "premerObjektiva": "16 mm", "povecava": "/", "tip": "Ramsdenov izvlječljiv okular", "kriz": "Dve horizontalni niti, ki se sekata z dvemi vertikalnimi nitmi, vizira se  pravokotnik v sredini", "stanje": "Popolnoma restavriran, poliran in lakiran; jan.2017" }, ' +
+            '{ "id":"46" , "vrsta":"Sekstant – odsevni krog", "proizvajalec":"Pistor & Martins Berlin" , "model":"/", "mere":"1,62; 17/8/19", "leto":"1850", "naslov": "Postavitev instrumenta", "tab":["Ročaj, pri meritvah ga držimo v roki"], "premer": "Nezaščiten, 155 mm", "vrstaRazdelbe": "Vgravirana razdelba", "nosilec": "Posrebreni kovinski nosilec", "razdelba": "Seksagezimalna; 0° do 130° in 180° do 270°", "enota" : "20\'", "stMest": "2", "izvedba" : "Nonij", "nonij": "60", "interval" : "20\'\'", "premerObjektiva": "6 mm", "povecava": "/", "tip": "Ramsdenov izvlječljiv okular", "kriz": "/", "stanje": "Popolnoma restavriran; feb. 2017" }]}';
+            var obj = JSON.parse(data);
+            var len = Object.values(obj.instrumenti).length;
+            for (var i = 0; i < len; i++) {
+                if (obj.instrumenti[i].id == id) {
+                    document.getElementById('evidencna').innerHTML = obj.instrumenti[i].id;
+                    document.getElementById('vrsta').innerHTML = obj.instrumenti[i].vrsta;
+                    document.getElementById('proizvajalec').innerHTML = obj.instrumenti[i].proizvajalec;
+                    document.getElementById('model').innerHTML = obj.instrumenti[i].model;
+                    document.getElementById('mere').innerHTML = obj.instrumenti[i].mere;
+                    document.getElementById('leto').innerHTML = obj.instrumenti[i].leto;
+                    document.getElementById('naslov').innerHTML = obj.instrumenti[i].naslov;
+                    var tabela = obj.instrumenti[i].tab;
+                    tabela.forEach(element => {
+                        document.getElementById("tabela").innerHTML += "- " + element + "<br>";
+                    });
+                    document.getElementById('premer').innerHTML = obj.instrumenti[i].premer;
+                    document.getElementById('vrstaRazdelbe').innerHTML = obj.instrumenti[i].vrstaRazdelbe;
+                    document.getElementById('nosilec').innerHTML = obj.instrumenti[i].nosilec;
+                    document.getElementById('razdelba').innerHTML = obj.instrumenti[i].razdelba;
+                    document.getElementById('enota').innerHTML = obj.instrumenti[i].enota;
+                    document.getElementById('stMest').innerHTML = obj.instrumenti[i].stMest;
+                    document.getElementById('izvedba').innerHTML = obj.instrumenti[i].izvedba;
+                    document.getElementById('nonij').innerHTML = obj.instrumenti[i].nonij;
+                    document.getElementById('interval').innerHTML = obj.instrumenti[i].interval;
+                    document.getElementById('premerObjektiva').innerHTML = obj.instrumenti[i].premerObjektiva;
+                    document.getElementById('povecava').innerHTML = obj.instrumenti[i].povecava;
+                    document.getElementById('tip').innerHTML = obj.instrumenti[i].tip;
+                    document.getElementById('kriz').innerHTML = obj.instrumenti[i].kriz;
+                    document.getElementById('stanje').innerHTML = obj.instrumenti[i].stanje;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

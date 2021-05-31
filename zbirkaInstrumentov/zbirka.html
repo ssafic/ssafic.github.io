@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding: 50px;">
+            <h1 class="animate-reveal animate-first d-flex justify-content-center">Zbirka instrumentov FGG</h1>
+        </div>
+          
+        
+        <div class="animate-reveal animate-second d-flex justify-content-center">
+          <div id="filter" style="padding: 50px; display: block;">
+            <h5>Proizvajalci</h5>
+            <input type="checkbox" id="all" checked>
+            <label for="all">Vsi</label>
+            <br>
+            <input type="checkbox" id="askania">
+            <label for="askania">Askania</label>
+            <br>
+            <input type="checkbox" id="kern">
+            <label for="kern">Kern</label>
+            <br>
+            <input type="checkbox" id="wild">
+            <label for="wild">Wild</label>
+            <br>
+            <input type="checkbox" id="mom">
+            <label for="mom">MOM</label>
+            <br>
+            <input type="checkbox" id="leica">
+            <label for="leica">Leica</label>
+            <br>
+          </div>
+          <table id="zbirka" class="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Št.</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Proizvajalec</th>
+                  <th scope="col">Leto izvedbe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="prikaziStran(63)">
+                  <th scope="row">63</th>
+                  <td>bxx</td>
+                  <td>Askania</td>
+                  <td>1942</td>
+                </tr>
+                <tr onclick="prikaziStran(31)" class="nivelir">
+                  <th scope="row">31</th>
+                  <td></td>
+                  <td>Poster Breithaupt & Sohn, Kassel</td>
+                  <td>1920</td>
+                </tr>
+                <tr onclick="prikaziStran(30)" class="nivelir">
+                  <th scope="row">30</th>
+                  <td></td>
+                  <td>Poster E. Kraft & Sohn</td>
+                  <td>1850</td>
+                </tr>
+                <tr onclick="prikaziStran(7)">
+                  <th scope="row">7</th>
+                  <td></td>
+                  <td>Poster E. Kraft & Sohn</td>
+                  <td>1867</td>
+                </tr>
+                <tr onclick="prikaziStran(11)">
+                  <th scope="row">11</th>
+                  <td></td>
+                  <td>Ertel München</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(25)">
+                  <th scope="row">25</th>
+                  <td></td>
+                  <td>Poster Gebrüder Fromme</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(65)">
+                  <th scope="row">65</th>
+                  <td>Theo 120</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(66)">
+                  <th scope="row">66</th>
+                  <td>Theo 080A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1979</td>
+                </tr>
+                <tr onclick="prikaziStran(69)">
+                  <th scope="row">69</th>
+                  <td>E12</td>
+                  <td>Kern</td>
+                  <td>1985</td>
+                </tr>
+                <tr onclick="prikaziStran(37)">
+                  <th scope="row">37</th>
+                  <td>Redta 002</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1951</td>
+                </tr>
+                <tr onclick="prikaziStran(7)">
+                  <th scope="row">7</th>
+                  <td></td>
+                  <td>E. Kraft & Sohn Wien</td>
+                  <td>1867</td>
+                </tr>
+                <tr onclick="prikaziStran(9)">
+                  <th scope="row">9</th>
+                  <td></td>
+                  <td>Starke & Kammerer Wien</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(11)">
+                  <th scope="row">11</th>
+                  <td></td>
+                  <td>Ertel München</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(13)">
+                  <th scope="row">13</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(14)">
+                  <th scope="row">14</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>1885</td>
+                </tr>
+                <tr onclick="prikaziStran(16)">
+                  <th scope="row">16</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(17)">
+                  <th scope="row">17</th>
+                  <td></td>
+                  <td>Otto Fennel & Sohne Kassel</td>
+                  <td>1920</td>
+                </tr>
+                <tr onclick="prikaziStran(20)">
+                  <th scope="row">20</th>
+                  <td></td>
+                  <td>Starke & Kammerer Wien</td>
+                  <td>Začetek 20. stol.</td>
+                </tr>
+                <tr onclick="prikaziStran(22)">
+                  <th scope="row">22A</th>
+                  <td>Th III</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1936</td>
+                </tr>
+                <tr onclick="prikaziStran(23)">
+                  <th scope="row">23</th>
+                  <td>N T2</td>
+                  <td>Wild</td>
+                  <td>1954</td>
+                </tr>
+                <tr onclick="prikaziStran(32)">
+                  <th scope="row">32</th>
+                  <td>Th IV</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1939</td>
+                </tr>
+                <tr onclick="prikaziStran(33)">
+                  <th scope="row">33</th>
+                  <td>T1</td>
+                  <td>Wild</td>
+                  <td>1933/1948</td>
+                </tr>
+                <tr onclick="prikaziStran(34)">
+                  <th scope="row">34</th>
+                  <td>T3</td>
+                  <td>Wild</td>
+                  <td>1934/1948</td>
+                </tr>
+                <tr onclick="prikaziStran(35)">
+                  <th scope="row">35</th>
+                  <td>Theo 010</td>
+                  <td>Carl Zeiss</td>
+                  <td>1953</td>
+                </tr>
+                <tr onclick="prikaziStran(36)">
+                  <th scope="row">36</th>
+                  <td>Theo 030</td>
+                  <td>Carl Zeiss</td>
+                  <td>1950</td>
+                </tr>
+                <tr onclick="prikaziStran(38)">
+                  <th scope="row">38</th>
+                  <td>17B</td>
+                  <td>MOM</td>
+                  <td>1945</td>
+                </tr>
+                <tr onclick="prikaziStran(45)">
+                  <th scope="row">45</th>
+                  <td>Theo 010A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1980</td>
+                </tr>
+                <tr onclick="prikaziStran(59)">
+                  <th scope="row">59</th>
+                  <td>Li-Te-B23, Li-T1</td>
+                  <td>MOM</td>
+                  <td>1965</td>
+                </tr>
+                <tr onclick="prikaziStran(76)">
+                  <th scope="row">76</th>
+                  <td>DKM2-A</td>
+                  <td>Kern</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(83)">
+                  <th scope="row">83</th>
+                  <td>E2</td>
+                  <td>Kern</td>
+                  <td>1986</td>
+                </tr>
+                <tr onclick="prikaziStran(85)">
+                  <th scope="row">85</th>
+                  <td>DKM2-AE</td>
+                  <td>Kern</td>
+                  <td>Po 1971</td>
+                </tr>
+                <tr onclick="prikaziStran(93)">
+                  <th scope="row">93</th>
+                  <td>T1800</td>
+                  <td>Leica</td>
+                  <td>1996</td>
+                </tr>
+                <tr onclick="prikaziStran(8)" class="nivelir">
+                  <th scope="row">8</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>Začetek 20. stoletja</td>
+                </tr>
+                <tr onclick="prikaziStran(12)" class="nivelir">
+                  <th scope="row">12</th>
+                  <td>Ni III</td>
+                  <td>Carl Zeiss</td>
+                  <td>1934</td>
+                </tr>
+                <tr onclick="prikaziStran(15)" class="nivelir">
+                  <th scope="row">15</th>
+                  <td></td>
+                  <td>Neuhőfer & Sohn Wien</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(21)" class="nivelir">
+                  <th scope="row">21</th>
+                  <td></td>
+                  <td>Otto Fennel & Söhne, Kassel</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(26)" class="nivelir">
+                  <th scope="row">26</th>
+                  <td></td>
+                  <td>Hildebrand – Reiss Wichmann</td>
+                  <td>1930</td>
+                </tr>
+                <tr onclick="prikaziStran(27)" class="nivelir">
+                  <th scope="row">27</th>
+                  <td>Ni B</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1946</td>
+                </tr>
+                <tr onclick="prikaziStran(29)" class="nivelir">
+                  <th scope="row">29</th>
+                  <td></td>
+                  <td>Hildebrand–Reiss-Wichmann-Werke</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(39)" class="nivelir">
+                  <th scope="row">39</th>
+                  <td>Tipo m</td>
+                  <td>Officine Galileo</td>
+                  <td>1950</td>
+                </tr>
+                <tr onclick="prikaziStran(51)" class="nivelir">
+                  <th scope="row">51</th>
+                  <td>Ni 030</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1950</td>
+                </tr>
+                <tr onclick="prikaziStran(54)" class="nivelir">
+                  <th scope="row">54</th>
+                  <td>Ni 004</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1953</td>
+                </tr>
+                <tr onclick="prikaziStran(58)" class="nivelir">
+                  <th scope="row">58</th>
+                  <td>NI–A3</td>
+                  <td>MOM</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(60)" class="nivelir">
+                  <th scope="row">60</th>
+                  <td>Ni-B3</td>
+                  <td>MOM</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(62)" class="nivelir">
+                  <th scope="row">62</th>
+                  <td>Koni 007</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(64)" class="nivelir">
+                  <th scope="row">64</th>
+                  <td>NA 3000</td>
+                  <td>Wild</td>
+                  <td>1992</td>
+                </tr>
+                <tr onclick="prikaziStran(73)" class="nivelir">
+                  <th scope="row">73</th>
+                  <td>DiNi10</td>
+                  <td>Zeiss Oberkochen</td>
+                  <td>1996</td>
+                </tr>
+                <tr onclick="prikaziStran(75)" class="nivelir">
+                  <th scope="row">75</th>
+                  <td>NI 2</td>
+                  <td>Zeiss Oberkochen</td>
+                  <td>1951</td>
+                </tr>
+                <tr onclick="prikaziStran(77)" class="nivelir">
+                  <th scope="row">77</th>
+                  <td>GK0-A</td>
+                  <td>Kern</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(78)" class="nivelir">
+                  <th scope="row">78</th>
+                  <td>GK1-A</td>
+                  <td>Kern</td>
+                  <td>1963</td>
+                </tr>
+                <tr onclick="prikaziStran(88)" class="nivelir">
+                  <th scope="row">88</th>
+                  <td>LFG 1</td>
+                  <td>Carl Zeiss</td>
+                  <td>1970</td>
+                </tr>
+                <tr onclick="prikaziStran(91)" class="nivelir">
+                  <th scope="row">91</th>
+                  <td>Ni 002</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1973</td>
+                </tr>
+                <tr onclick="prikaziStran(96)" class="tahimeter">
+                  <th scope="row">96</th>
+                  <td>TC605L</td>
+                  <td>Leica</td>
+                  <td>2001</td>
+                </tr>
+                <tr onclick="prikaziStran(18)" class="tahimeter">
+                  <th scope="row">18</th>
+                  <td></td>
+                  <td>Otto Fennel & Söhne, Kassel</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(52)" class="tahimeter">
+                  <th scope="row">52</th>
+                  <td>BRT 006</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(53)" class="tahimeter">
+                  <th scope="row">53</th>
+                  <td>Teletop 6x</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1957</td>
+                </tr>
+                <tr onclick="prikaziStran(56)" class="tahimeter">
+                  <th scope="row">56; 57</th>
+                  <td>Dahlta 010; Karti</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1968; 1965</td>
+                </tr>
+                <tr onclick="prikaziStran(67)" class="tahimeter">
+                  <th scope="row">67</th>
+                  <td>Dahlta 010A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1979</td>
+                </tr>
+                <tr onclick="prikaziStran(71)" class="tahimeter">
+                  <th scope="row">71</th>
+                  <td>TC2002</td>
+                  <td>Leica Wild</td>
+                  <td>1993</td>
+                </tr>
+                <tr onclick="prikaziStran(74)" class="tahimeter">
+                  <th scope="row">74</th>
+                  <td>TC1010</td>
+                  <td>Leica Wild</td>
+                  <td>1990</td>
+                </tr>
+                <tr onclick="prikaziStran(89)" class="tahimeter">
+                  <th scope="row">89</th>
+                  <td>EOT 2000</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1975</td>
+                </tr>
+                <tr onclick="prikaziStran(94)" class="tahimeter">
+                  <th scope="row">94</th>
+                  <td>TC2003</td>
+                  <td>Leica Wild</td>
+                  <td>1998</td>
+                </tr>
+                <tr onclick="prikaziStran(68)" class="razdaljemer">
+                  <th scope="row">68</th>
+                  <td>DI 3000S</td>
+                  <td>Leica Wild</td>
+                  <td>1998</td>
+                </tr>
+                <tr onclick="prikaziStran(92)" class="razdaljemer">
+                  <th scope="row">92</th>
+                  <td>3800B</td>
+                  <td>Hewlett Packard (HP)</td>
+                  <td>1969</td>
+                </tr>
+                <tr onclick="prikaziStran(70)" class="razdaljemer">
+                  <th scope="row">70</th>
+                  <td>DM502</td>
+                  <td>Kern</td>
+                  <td>1983</td>
+                </tr>
+                <tr onclick="prikaziStran(84)" class="razdaljemer">
+                  <th scope="row">84</th>
+                  <td>DM503</td>
+                  <td>Kern</td>
+                  <td>1986</td>
+                </tr>
+                <tr onclick="prikaziStran(86)" class="razdaljemer">
+                  <th scope="row">86</th>
+                  <td>Mekometer ME 3000</td>
+                  <td>Kern</td>
+                  <td>1972 (1980)</td>
+                </tr>
+                <tr onclick="prikaziStran(87)" class="razdaljemer">
+                  <th scope="row">87</th>
+                  <td>Mekometer ME 5000</td>
+                  <td>Kern</td>
+                  <td>Do 1990 (1989)</td>
+                </tr>
+                <tr onclick="prikaziStran(44)" class="sekstant">
+                  <th scope="row">44</th>
+                  <td></td>
+                  <td>Josh Semalvico London</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(46)" class="sekstant">
+                  <th scope="row">46</th>
+                  <td></td>
+                  <td>Pistor & Martins Berlin</td>
+                  <td>1850</td>
+                </tr>
+                <tr onclick="prikaziStran(24)" class="kipregel">
+                  <th scope="row">24</th>
+                  <td></td>
+                  <td>Gebrüder Fromme</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(25)" class="kipregel">
+                  <th scope="row">25</th>
+                  <td></td>
+                  <td>Neuhöfer & Sohn</td>
+                  <td>1880</td>
+                </tr>
+                <tr onclick="prikaziStran(28)" class="kipregel">
+                  <th scope="row">28</th>
+                  <td>Kipre B</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1940</td>
+                </tr>
+                <tr onclick="prikaziStran(61)" class="kipregel">
+                  <th scope="row">61</th>
+                  <td>MA - 5</td>
+                  <td>MOM</td>
+                  <td>1955</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </body>
+</html>
