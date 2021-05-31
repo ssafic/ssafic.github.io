@@ -30,7 +30,7 @@
         <div style="padding-top: 50px;" class="container justify-content-center">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-5">
-                    <img src="" id="slika">
+                    <img src="" id="slika" style="height: auto; width: 100%;">
                 </div>
         
                 <div style="padding-top: 50px;" class="col-sm-12 col-md-12 col-lg-6">
@@ -188,7 +188,7 @@
         <script>
             var url = window.location.href;
             var n = url.length;
-            var id = url.slice(51, n);
+            var id = url.slice(61, n);
             document.getElementById('slika').src = "img/instrument_" + id + ".png";
             var data = '{ "instrumenti" : [' +
             '{ "id":"63" , "vrsta":"Balonteodolit", "proizvajalec":"Askania" , "model":"bxx", "mere":"2,65; 20/25/25", "leto":"1942", "naslov":"Centriranje in horizontiranje instrumenta", "tab":["Navadno grezilo", "Cevna libela na vrhu instrumenta"], "premer1":"Zaščiten razen mesta za čitanje,  12 cm", "premer2":"Neaščiten polkrog, 12 cm", "vrstaRazdelbe1":"Vgravirana razdelba", "vrstaRazdelbe2":"Vgravirana razdelba", "nosilec1":"Kovinski nosilec", "nosilec2":"Kovinski nosilec", "razdelba1":"Seksagezimalna", "razdelba2":"Seksagezimalna", "enota1":"1°", "enota2":"1°", "stMest1":"2", "stMest2":"2", "izvedba1":"Nonij", "izvedba2":"Nonij", "nonij1":"600", "nonij2":"600", "interval1":"6\'", "interval2":"6\'", "repeticija1":"Ne", "repeticija2":"/", "premerObjektiva":"40 mm; za iskanje 13,5 mm", "povecava":"16 x, za iskanje 3 x", "tip":"Daljnogled z notranjim fokusiranjem", "kriz":"Nitni križ z osnovno horizontalno in osnovno vertikalno nitjo", "stanje": "Instrument je v stanju, kot je bil ob prenehanju njegove uporabe" }, ' +
