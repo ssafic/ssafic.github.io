@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding: 50px;">
+            <h1 class="animate-reveal animate-first d-flex justify-content-center">Zbirka tahimetrov</h1>
+        </div>
+          
+        
+        <div class="animate-reveal animate-second d-flex justify-content-center" style="padding: 150px;">
+          <table class="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Št.</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Proizvajalec</th>
+                  <th scope="col">Leto izvedbe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="prikaziStran(96)" class="tahimeter">
+                    <th scope="row">96</th>
+                    <td>TC605L</td>
+                    <td>Leica</td>
+                    <td>2001</td>
+                </tr>
+                <tr onclick="prikaziStran(18)" class="tahimeter">
+                    <th scope="row">18</th>
+                    <td></td>
+                    <td>Otto Fennel & Söhne, Kassel</td>
+                    <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(52)" class="tahimeter">
+                    <th scope="row">52</th>
+                    <td>BRT 006</td>
+                    <td>Carl Zeiss Jena</td>
+                    <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(53)" class="tahimeter">
+                    <th scope="row">53</th>
+                    <td>Teletop 6x</td>
+                    <td>Carl Zeiss Jena</td>
+                    <td>1957</td>
+                </tr>
+                <tr onclick="prikaziStran(56)" class="tahimeter">
+                  <th scope="row">56; 57</th>
+                  <td>Dahlta 010; Karti</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1968; 1965</td>
+                </tr>
+                <tr onclick="prikaziStran(67)" class="tahimeter">
+                  <th scope="row">67</th>
+                  <td>Dahlta 010A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1979</td>
+                </tr>
+                <tr onclick="prikaziStran(71)" class="tahimeter">
+                  <th scope="row">71</th>
+                  <td>TC2002</td>
+                  <td>Leica Wild</td>
+                  <td>1993</td>
+                </tr>
+                <tr onclick="prikaziStran(74)" class="tahimeter">
+                  <th scope="row">74</th>
+                  <td>TC1010</td>
+                  <td>Leica Wild</td>
+                  <td>1990</td>
+                </tr>
+                <tr onclick="prikaziStran(89)" class="tahimeter">
+                  <th scope="row">89</th>
+                  <td>EOT 2000</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1975</td>
+                </tr>
+                <tr onclick="prikaziStran(94)" class="tahimeter">
+                  <th scope="row">94</th>
+                  <td>TC2003</td>
+                  <td>Leica Wild</td>
+                  <td>1998</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </body>
+</html>
