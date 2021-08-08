@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zbirka</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="./style/main.css">
+        <script type="text/javascript" src="javascript/page.js"></script>
+        <!-- <script type="text/javascript" src="javascript/filter.js"></script> -->
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c41010;">
+            <a style="font-weight: bold; color: white;" class="navbar-brand" href="index.html">Zbirka instrumentov FGG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Domov</a>
+                <a class="nav-item nav-link" href="zbirka.html">Zbirka <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.fgg.uni-lj.si/">Fakulteta</a>
+              </div>
+            </div>
+        </nav>
+        <div style="padding: 50px;">
+            <h1 class="animate-reveal animate-first d-flex justify-content-center">Zbirka instrumentov FGG</h1>
+        </div>
+          
+        
+        <div class="animate-reveal animate-second d-flex justify-content-center">
+          <div class="filter" id="filter" style="padding: 50px; display: block;">
+            <h5>Proizvajalci</h5>
+            <input type="radio" id="all" name="filter" checked>
+            <label for="all">Vsi</label>
+            <br>
+            <input type="radio" name="filter" id="askania">
+            <label for="askania">Askania</label>
+            <br>
+            <input type="radio" name="filter" id="kern">
+            <label for="kern">Kern</label>
+            <br>
+            <input type="radio" name="filter" id="wild">
+            <label for="wild">Wild</label>
+            <br>
+            <input type="radio" name="filter" id="mom">
+            <label for="mom">MOM</label>
+            <br>
+            <input type="radio" name="filter" id="breithaupt">
+            <label for="breithaupt">Breithaupt & Sohn</label>
+            <br>
+            <input type="radio" name="filter" id="kraft">
+            <label for="kraft">Kraft</label>
+            <br>
+            <input type="radio" name="filter" id="ertel">
+            <label for="ertel">Ertel München</label>
+            <br>
+            <input type="radio" name="filter" id="leica">
+            <label for="leica">Leica</label>
+            <br>
+            <input type="radio" name="filter" id="gebruder">
+            <label for="gebruder">Gebrüder Fromme</label>
+            <br>
+            <input type="radio" name="filter" id="carl">
+            <label for="carl">Carl Zeiss Jena</label>
+            <br>
+            <input type="radio" name="filter" id="starke">
+            <label for="starke">Starke & Kammerer Wien</label>
+            <br>
+            <input type="radio" name="filter" id="rost">
+            <label for="rost">Rost Wien</label>
+            <br>
+            <input type="radio" name="filter" id="neuhofer">
+            <label for="neuhofer">Neuhöfer & Sohn</label>
+            <br>
+            <input type="radio" name="filter" id="otto">
+            <label for="otto">Otto Fennel & Söhne</label>
+            <br>
+            <input type="radio" name="filter" id="galileo">
+            <label for="galileo">Officine Galileo</label>
+            <br>
+            <input type="radio" name="filter" id="hp">
+            <label for="hp">Hewlett Packard</label>
+            <br>
+          </div>
+          <table id="zbirka" class="tabela-zbirke table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Št.</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Proizvajalec</th>
+                  <th scope="col">Leto izvedbe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="prikaziStran(63)" class="askania">
+                  <th scope="row">63</th>
+                  <td>bxx</td>
+                  <td>Askania</td>
+                  <td>1942</td>
+                </tr>
+                <tr onclick="prikaziStran(31)" class="breithaupt">
+                  <th scope="row">31</th>
+                  <td></td>
+                  <td>Poster Breithaupt & Sohn, Kassel</td>
+                  <td>1920</td>
+                </tr>
+                <tr onclick="prikaziStran(30)" class="kraft">
+                  <th scope="row">30</th>
+                  <td></td>
+                  <td>Poster E. Kraft & Sohn</td>
+                  <td>1850</td>
+                </tr>
+                <tr onclick="prikaziStran(7)" class="kraft">
+                  <th scope="row">7</th>
+                  <td></td>
+                  <td>Poster E. Kraft & Sohn</td>
+                  <td>1867</td>
+                </tr>
+                <tr onclick="prikaziStran(11)" class="ertel">
+                  <th scope="row">11</th>
+                  <td></td>
+                  <td>Ertel München</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(25)" class="gebruder">
+                  <th scope="row">25</th>
+                  <td></td>
+                  <td>Poster Gebrüder Fromme</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(65)" class="carl">
+                  <th scope="row">65</th>
+                  <td>Theo 120</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(66)" class="carl">
+                  <th scope="row">66</th>
+                  <td>Theo 080A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1979</td>
+                </tr>
+                <tr onclick="prikaziStran(69)" class="kern">
+                  <th scope="row">69</th>
+                  <td>E12</td>
+                  <td>Kern</td>
+                  <td>1985</td>
+                </tr>
+                <tr onclick="prikaziStran(37)" class="carl">
+                  <th scope="row">37</th>
+                  <td>Redta 002</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1951</td>
+                </tr>
+                <tr onclick="prikaziStran(7)" class="kraft">
+                  <th scope="row">7</th>
+                  <td></td>
+                  <td>E. Kraft & Sohn Wien</td>
+                  <td>1867</td>
+                </tr>
+                <tr onclick="prikaziStran(9)" class="starke">
+                  <th scope="row">9</th>
+                  <td></td>
+                  <td>Starke & Kammerer Wien</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(11)" class="ertel">
+                  <th scope="row">11</th>
+                  <td></td>
+                  <td>Ertel München</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(13)" class="rost">
+                  <th scope="row">13</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(14)" class="rost">
+                  <th scope="row">14</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>1885</td>
+                </tr>
+                <tr onclick="prikaziStran(16)" class="rost">
+                  <th scope="row">16</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(17)" class="otto">
+                  <th scope="row">17</th>
+                  <td></td>
+                  <td>Otto Fennel & Sohne Kassel</td>
+                  <td>1920</td>
+                </tr>
+                <tr onclick="prikaziStran(20)" class="starke">
+                  <th scope="row">20</th>
+                  <td></td>
+                  <td>Starke & Kammerer Wien</td>
+                  <td>Začetek 20. stol.</td>
+                </tr>
+                <tr onclick="prikaziStran(22)" class="carl">
+                  <th scope="row">22A</th>
+                  <td>Th III</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1936</td>
+                </tr>
+                <tr onclick="prikaziStran(23)" class="wild">
+                  <th scope="row">23</th>
+                  <td>N T2</td>
+                  <td>Wild</td>
+                  <td>1954</td>
+                </tr>
+                <tr onclick="prikaziStran(32)" class="carl">
+                  <th scope="row">32</th>
+                  <td>Th IV</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1939</td>
+                </tr>
+                <tr onclick="prikaziStran(33)" class="wild">
+                  <th scope="row">33</th>
+                  <td>T1</td>
+                  <td>Wild</td>
+                  <td>1933/1948</td>
+                </tr>
+                <tr onclick="prikaziStran(34)" class="wild">
+                  <th scope="row">34</th>
+                  <td>T3</td>
+                  <td>Wild</td>
+                  <td>1934/1948</td>
+                </tr>
+                <tr onclick="prikaziStran(35)" class="carl">
+                  <th scope="row">35</th>
+                  <td>Theo 010</td>
+                  <td>Carl Zeiss</td>
+                  <td>1953</td>
+                </tr>
+                <tr onclick="prikaziStran(36)" class="carl">
+                  <th scope="row">36</th>
+                  <td>Theo 030</td>
+                  <td>Carl Zeiss</td>
+                  <td>1950</td>
+                </tr>
+                <tr onclick="prikaziStran(38)" class="mom">
+                  <th scope="row">38</th>
+                  <td>17B</td>
+                  <td>MOM</td>
+                  <td>1945</td>
+                </tr>
+                <tr onclick="prikaziStran(45)" class="carl">
+                  <th scope="row">45</th>
+                  <td>Theo 010A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1980</td>
+                </tr>
+                <tr onclick="prikaziStran(59)" class="mom">
+                  <th scope="row">59</th>
+                  <td>Li-Te-B23, Li-T1</td>
+                  <td>MOM</td>
+                  <td>1965</td>
+                </tr>
+                <tr onclick="prikaziStran(76)" class="kern">
+                  <th scope="row">76</th>
+                  <td>DKM2-A</td>
+                  <td>Kern</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(83)" class="kern">
+                  <th scope="row">83</th>
+                  <td>E2</td>
+                  <td>Kern</td>
+                  <td>1986</td>
+                </tr>
+                <tr onclick="prikaziStran(85)" class="kern">
+                  <th scope="row">85</th>
+                  <td>DKM2-AE</td>
+                  <td>Kern</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(93)" class="leica">
+                  <th scope="row">93</th>
+                  <td>T1800</td>
+                  <td>Leica</td>
+                  <td>1996</td>
+                </tr>
+                <tr onclick="prikaziStran(8)" class="rost">
+                  <th scope="row">8</th>
+                  <td></td>
+                  <td>R & A Rost Wien</td>
+                  <td>Začetek 20. stoletja</td>
+                </tr>
+                <tr onclick="prikaziStran(12)" class="carl">
+                  <th scope="row">12</th>
+                  <td>Ni III</td>
+                  <td>Carl Zeiss</td>
+                  <td>1934</td>
+                </tr>
+                <tr onclick="prikaziStran(15)" class="neuhofer">
+                  <th scope="row">15</th>
+                  <td></td>
+                  <td>Neuhőfer & Sohn Wien</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(21)" class="otto">
+                  <th scope="row">21</th>
+                  <td></td>
+                  <td>Otto Fennel & Söhne, Kassel</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(26)" class="ostalo">
+                  <th scope="row">26</th>
+                  <td></td>
+                  <td>Hildebrand – Reiss Wichmann</td>
+                  <td>1930</td>
+                </tr>
+                <tr onclick="prikaziStran(27)" class="carl">
+                  <th scope="row">27</th>
+                  <td>Ni B</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1946</td>
+                </tr>
+                <tr onclick="prikaziStran(29)" class="ostalo">
+                  <th scope="row">29</th>
+                  <td></td>
+                  <td>Hildebrand–Reiss-Wichmann-Werke</td>
+                  <td>1900</td>
+                </tr>
+                <tr onclick="prikaziStran(39)" class="galileo">
+                  <th scope="row">39</th>
+                  <td>Tipo m</td>
+                  <td>Officine Galileo</td>
+                  <td>1950</td>
+                </tr>
+                <tr onclick="prikaziStran(51)" class="carl">
+                  <th scope="row">51</th>
+                  <td>Ni 030</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1950</td>
+                </tr>
+                <tr onclick="prikaziStran(54)" class="carl">
+                  <th scope="row">54</th>
+                  <td>Ni 004</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1953</td>
+                </tr>
+                <tr onclick="prikaziStran(58)" class="mom">
+                  <th scope="row">58</th>
+                  <td>NI–A3</td>
+                  <td>MOM</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(60)" class="mom">
+                  <th scope="row">60</th>
+                  <td>Ni-B3</td>
+                  <td>MOM</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(62)" class="carl">
+                  <th scope="row">62</th>
+                  <td>Koni 007</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(64)" class="wild">
+                  <th scope="row">64</th>
+                  <td>NA 3000</td>
+                  <td>Wild</td>
+                  <td>1992</td>
+                </tr>
+                <tr onclick="prikaziStran(73)" class="ostalo">
+                  <th scope="row">73</th>
+                  <td>DiNi10</td>
+                  <td>Zeiss Oberkochen</td>
+                  <td>1996</td>
+                </tr>
+                <tr onclick="prikaziStran(75)" class="ostalo">
+                  <th scope="row">75</th>
+                  <td>NI 2</td>
+                  <td>Zeiss Oberkochen</td>
+                  <td>1951</td>
+                </tr>
+                <tr onclick="prikaziStran(77)" class="kern">
+                  <th scope="row">77</th>
+                  <td>GK0-A</td>
+                  <td>Kern</td>
+                  <td>1971</td>
+                </tr>
+                <tr onclick="prikaziStran(78)" class="kern">
+                  <th scope="row">78</th>
+                  <td>GK1-A</td>
+                  <td>Kern</td>
+                  <td>1963</td>
+                </tr>
+                <tr onclick="prikaziStran(88)" class="carl">
+                  <th scope="row">88</th>
+                  <td>LFG 1</td>
+                  <td>Carl Zeiss</td>
+                  <td>1970</td>
+                </tr>
+                <tr onclick="prikaziStran(91)" class="carl">
+                  <th scope="row">91</th>
+                  <td>Ni 002</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1973</td>
+                </tr>
+                <tr onclick="prikaziStran(96)" class="leica">
+                  <th scope="row">96</th>
+                  <td>TC605L</td>
+                  <td>Leica</td>
+                  <td>2001</td>
+                </tr>
+                <tr onclick="prikaziStran(18)" class="otto">
+                  <th scope="row">18</th>
+                  <td></td>
+                  <td>Otto Fennel & Söhne, Kassel</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(52)" class="carl">
+                  <th scope="row">52</th>
+                  <td>BRT 006</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1960</td>
+                </tr>
+                <tr onclick="prikaziStran(53)" class="carl">
+                  <th scope="row">53</th>
+                  <td>Teletop 6x</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1957</td>
+                </tr>
+                <tr onclick="prikaziStran(56)" class="carl">
+                  <th scope="row">56; 57</th>
+                  <td>Dahlta 010; Karti</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1968; 1965</td>
+                </tr>
+                <tr onclick="prikaziStran(67)" class="carl">
+                  <th scope="row">67</th>
+                  <td>Dahlta 010A</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1979</td>
+                </tr>
+                <tr onclick="prikaziStran(71)" class="leica">
+                  <th scope="row">71</th>
+                  <td>TC2002</td>
+                  <td>Leica Wild</td>
+                  <td>1993</td>
+                </tr>
+                <tr onclick="prikaziStran(74)" class="leica">
+                  <th scope="row">74</th>
+                  <td>TC1010</td>
+                  <td>Leica Wild</td>
+                  <td>1990</td>
+                </tr>
+                <tr onclick="prikaziStran(89)" class="carl">
+                  <th scope="row">89</th>
+                  <td>EOT 2000</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1975</td>
+                </tr>
+                <tr onclick="prikaziStran(94)" class="leica">
+                  <th scope="row">94</th>
+                  <td>TC2003</td>
+                  <td>Leica Wild</td>
+                  <td>1998</td>
+                </tr>
+                <tr onclick="prikaziStran(68)" class="leica">
+                  <th scope="row">68</th>
+                  <td>DI 3000S</td>
+                  <td>Leica Wild</td>
+                  <td>1998</td>
+                </tr>
+                <tr onclick="prikaziStran(92)" class="hp">
+                  <th scope="row">92</th>
+                  <td>3800B</td>
+                  <td>Hewlett Packard (HP)</td>
+                  <td>1969</td>
+                </tr>
+                <tr onclick="prikaziStran(70)" class="kern">
+                  <th scope="row">70</th>
+                  <td>DM502</td>
+                  <td>Kern</td>
+                  <td>1983</td>
+                </tr>
+                <tr onclick="prikaziStran(84)" class="kern">
+                  <th scope="row">84</th>
+                  <td>DM503</td>
+                  <td>Kern</td>
+                  <td>1986</td>
+                </tr>
+                <tr onclick="prikaziStran(86)" class="kern">
+                  <th scope="row">86</th>
+                  <td>Mekometer ME 3000</td>
+                  <td>Kern</td>
+                  <td>1972 (1980)</td>
+                </tr>
+                <tr onclick="prikaziStran(87)" class="kern">
+                  <th scope="row">87</th>
+                  <td>Mekometer ME 5000</td>
+                  <td>Kern</td>
+                  <td>Do 1990 (1989)</td>
+                </tr>
+                <tr onclick="prikaziStran(44)" class="ostalo">
+                  <th scope="row">44</th>
+                  <td></td>
+                  <td>Josh Semalvico London</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(46)" class="ostalo">
+                  <th scope="row">46</th>
+                  <td></td>
+                  <td>Pistor & Martins Berlin</td>
+                  <td>1850</td>
+                </tr>
+                <tr onclick="prikaziStran(24)" class="gebruder">
+                  <th scope="row">24</th>
+                  <td></td>
+                  <td>Gebrüder Fromme</td>
+                  <td>1890</td>
+                </tr>
+                <tr onclick="prikaziStran(25)" class="neuhofer">
+                  <th scope="row">25</th>
+                  <td></td>
+                  <td>Neuhöfer & Sohn</td>
+                  <td>1880</td>
+                </tr>
+                <tr onclick="prikaziStran(28)" class="carl">
+                  <th scope="row">28</th>
+                  <td>Kipre B</td>
+                  <td>Carl Zeiss Jena</td>
+                  <td>1940</td>
+                </tr>
+                <tr onclick="prikaziStran(61)" class="mom">
+                  <th scope="row">61</th>
+                  <td>MA - 5</td>
+                  <td>MOM</td>
+                  <td>1955</td>
+                </tr>
+              </tbody>
+            </table>   
+          
+        </div>
+        <div id="proizvajalec" class="animate-reveal animate-second d-flex justify-content-center" style="padding: 50px;">
+        </div> 
+    </body>
+
+    <script>
+
+      let all = $("#all");
+      let askania = $("#askania");
+      let kern = $("#kern");
+      let wild = $("#wild");
+      let mom = $("#mom");
+      let breithaupt = $("#breithaupt");
+      let kraft = $("#kraft");
+      let ertel = $("#ertel");
+      let leica = $("#leica");
+      let gebruder = $("#gebruder");
+      let carl = $("#carl");
+      let starke = $("#starke");
+      let rost = $("#rost");
+      let neuhofer = $("#neuhofer");
+      let otto = $("#otto");
+      let galileo = $("#galileo");
+      let hp = $("#hp");
+      
+      all.on("change", e => {
+        $(".ostalo").show();
+        $(".askania").show();
+        $(".kern").show();
+        $(".mom").show();
+        $(".leica").show();
+        $(".kraft").show();
+        $(".breithaupt").show();
+        $(".ertel").show();
+        $(".gebruder").show();
+        $(".hp").show();
+        $(".neuhofer").show();
+        $(".galileo").show();
+        $(".otto").show();
+        $(".rost").show();
+        $(".carl").show();
+        $(".wild").show();
+        $(".starke").show();
+
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\"></p><br></div>");
+      });
+
+      askania.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").show();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje Askania je leta 1871 ustanovil precizni mehanik in optik Carl Bamberg. Pred tem je že izdeloval geodetske instrumente pod okriljem Carla Zeissa. Po njegovi smrti leta 1892 sta vodenje podjetja prevzela njegova žena in kasneje sin. Med letoma 1921 in 1969 je podjetje delovalo pod imenom Askania Werke, nato pa se je pridružilo koncernu Siemens. Izdelovali so precizne instrumente za merjenje časa, navigacijo, geodezijo, astronomijo in gravimetrijo. Poznani so bili po svoji inovativnosti in zanesljivi tehnologiji. (Slak, 2017).</p><br></div>");
+      });
+
+      kern.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").show();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje je kot mehanično delavnico leta 1819 v kraju Aarau ustanovil Jakob Kern. Velja za najstarejše podjetje švicarske optično-finomehanične industrije. Jakob Kern se je pred tem uril v matematičnih delavnicah konstruktorja Reichenbacha, Baumanna in Ulricha Schenka. Izdelovanja risarskega pribora pa se je učil od Johanna Ludwiga Esserja, njegovi izdelki za risanje in merilni pribor so bili znani po kakovosti in natančnosti. Podjetje so poleg Jakoba najprej sestavljali še štirje zaposleni. Sčasoma pa so se razširili in postali znani kot eden večjih proizvajalcev geodetskih in astronomskih instrumentov. Leta 1857 sta vodenje prevzela sinova Emil in Adolf. V času po prvi svetovni vojni so se zaradi otežene dobave začeli ukvarjati še z razvojem in izdelavo leč in prizm ter tako postali neodvisni od uvoza. Pomembno je bilo leto 1936, ko jim je uspelo pod vodstvom konstruktorja dr. Heinricha Wilda izdelati teodolit z dvojnim krogom, ki omogoča enostavnejše odčitavanje slike kroga z uporabo mikrometra. Leta 1988 jih je prevzelo podjetje Wild Leitz, leta 1990 so se preoblikovali v podjetje Leica Aarau, ki pa se je naslednje leto zaprlo (Cimerman, 1960; Slak, 2017).</p><br></div>");
+      });
+
+      wild.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").show();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje Wild Heerbrugg je leta 1921 ustanovil Heinrich Wild. Najprej je bilo organizirano za proizvodnjo  finomehanike in optike, nato pa se je preoblikovalo v prodajno delniško družbo geodetskih instrumentov. Leta 1988 se jim je pridružilo podjetje Kern, leta 1990 pa še Leica – takrat se je tudi preimenovalo v Leica Geosystems. Heinrich Wild je za svoje znanstvene dosežke leta 1930 prejel častni doktorat. Heinrich je iz podjetja leta 1932 izstopil in se samostojno ukvarjal z razvojem in konstruiranjem novih geodetskih in fotogrametričnih instrumentov. Do leta 1935 je pogodbeno sodeloval s podjetjem Wild, nato pa je do svoje smrti sodeloval z Kernom. Wildovi instrumenti so znani po vrhunski izdelavi, odpornosti proti poškodbam in visoki natančnosti. (Slak, 2017).</p><br></div>");
+      });
+
+      mom.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").show();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Madžarsko podjetje MOM je nastalo leta 1876 iz majhne finomehanične delavnice v Kolozsvaru. V Budimpešto ga je ustanovitelj Nandor Süss preselil leta 1884. V njem so tudi poklicno usposabljali kader za geodetska dela. Leta 1900 se je podjetje preimenovalo v Institut za precizno mehaniko Nandorja Süssa. Kmalu za tem je podjetje proizvajalo že preko 200 različnih instrumentov (večino so predstavljali nivelirji in teodoliti), v začetku dvajsetih let 20. stoletja pa so odprli še dve podružnici – v Beogradu in v Bukarešti. Leta 1938 so se preimenovali v Magyar Optikai Müvek (madžarski optični obrat) – MOM. Poleg geodetskih instrumentov so izdelovali še optične leče, ure, laboratorijske instrumente, optična vlakna, plinske laserje in podobno. Leta 1995 se je del MOM-a preimenoval v GeoDesy Ltd (Cimerman, 1960; Slak, 2017).</p><br></div>");
+      });
+
+      leica.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").show();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\"></p><br></div>");
+      });
+    
+      breithaupt.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").show();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Breithaupt & Sohn Kassel je najstarejše še delujoče podjetje za izdelavo geodetskih instrumentov v Evropi in na svetu. Leta 1762 ga je ustanovil Johan Christian Breithaupt. Leta 1810 so izdelali prvi busolni teodolit – teodolit s kompasom za merjenje horizontalnih smeriin vertikalnih kotov. Izdelovali so sekundne teodolite sodobne konstrukcije, tahimetre s steklenimi krogi in optičnimi mikrometri, avtoredukcijske tahimetre za vertikalno lato, več vrst nivelirjev in še mnoge druge instrumente. Njihovi teodoliti so se veliko uporabljali tudi na slovenskih tleh. Dandanes podjetje še vedno obratuje, vodita pa ga Hans Helmut Breithaupt in Hans Fridrich Breithaupt. (Cimerman, 1960; Slak, 2017).</p><br></div>");
+      });
+    
+      kraft.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").show();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Ustanovlitelj Carl Eduard Kraft je leta 1823 na Dunaju odprl mehanično delavnico, ki je pomenila začetek podjetja. Bil je privilegiran mehanik in je do leta 1841 imel že dvajset zaposlenih pomočnikov. Zanj je delal celo Siegfried Marcus, izumitelj z več kot 130 patenti. Izdelovali so različna zemljemerska orodja, teodolite, tahimetre, nivelirje, kompase, instrumente za gozdarstvo, sekstante, merske trakove, zložljiva ravnila, risarski pribor in podobno. Bili so glavni dobavitelj geodetskih instrumentov pri gradnji avstrijskih železnic, opremo pa so dobavljali tudi  za projektiranje in gradnjo Sueškega prekopa. Podjetje je leta 1903 končalo s proizvodnjo (Slak, 2017).</p><br></div>");
+      });
+      
+      ertel.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").show();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Ertel-Werke, München Inženir in izumitelj Georg Friedrich von Reichenbach je ustanovil svoje podjetje v Münchnu in začel s načrtovanjem in proizvajanjem »naprav za deljenje kotov« ter geodetskih in astronomskih instrumentov. Reichenbach je prvi začel uporabljati trinitni razdaljemer, ki se po njem tudi imenuje. Skonstruiral je nivelir z vrtljivim daljnogledom in obrnljivo libelo, njegovi instrumenti so imeli precej boljšo natančnost od konkurence. Po smrti Reichenbacha leta 1826 je podjetje prevzel njegov partner, Traugott Leberecht von Ertel. Podjetje se je najprej imenovalo Ertel Werke AG für Feinmechanik, nato se je leta 1834 preimenovalo v T. Ertel & Sohn, od leta 1835 pa do ukinitve leta 1984 pa so se imenovali Ertel Werk für Feinmechanik. Proizvajali so predvsem teodolite, nivelirje in kipregle ali topografske garniture (Cimerman, 1960; Slak, 2017).</p><br></div>");
+      });
+      
+      gebruder.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").show();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje sta leta 1884 ustanovila brata Adolf in Karl Fromme. Kasneje, leta 1927, se je preimenovalo v Adolf Fromme Mechanische, Optische und Geodätische Instrumenten-Fabrik in je pod tem imenom delovalo vse do ukinitve leta 1970. Izdelovalo je geodetske instrumente, risarski pribor ter druge računske pripomočke, ki so se uporabljali v geodeziji, na primer logaritmično računalo. Proizvajalo pa je tudi merske naprave za gradbeno in gozdarsko stroko ter kartografske pripomočke, kot so koordinatografi, nonijska merila, pantografi. Poznani so po svojih busolah s konca 19. stoletja (Slak, 2017)</p><br></div>");
+      });
+      
+      carl.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").show();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Eden izmed pionirjev nemške optične industrije, Carl Zeiss, je podjetje ustanovil leta 1846 v mestu Jena. Podjetje je v nekaj desetletjih postalo vrhunsko na področjih optike in finomehanike, razvoj pa se je še pospešil leta 1866, ko kot direktor začel delovati optik in profesor fizike Ernst Abbe, ki je po Zeissovi smrti tudi prevzel podjetje. Pomemben je bil tudi prihod Otta Schotta, kemika in inovatorja na področju stekla, ki je s podjetjem začel sodelovati leta 1884. Z izdelavo geodetskih instrumentov so pričeli leta 1908, ko se je v Jeno preselil švicarski inženir geodezije Heinrich Wild. Ta je leta 1910 skonstruiral nivelir z optičnim mikrometrom in planparalelno ploščo za uporabo nivelmanskih lat s črtno razdelbo in koincidenčno libelo. Podjetje je leta 1912 prodalo že 1000 takih instrumentov. Po vojni, leta 1920, je Wild skonstruiral teodolit s steklenimi krogi, ki ima prvi vgrajeni optični mikrometer, ki omogoča ugotavljanje odčitka na dveh diametralnih mest na krogu. Leta 1919 je Wild zapustil podjetje in leta 1921 tudi pogodbeno prekinil sodelovanje z njimi. Leta 1926 so proizvedli avtoredukcijski tahimeter Redta, na osnovi ideje Rudolfa Bossharda. Avtoredukcijske tahimetre Dahlta pa so zaradi raznoraznih zapletov začeli izdelovati šele leta 1942. Njihov najuspešnejši teodolit pa je Th IV (Cimerman, 1960; Slak, 2017). Po drugi svetovni vojni se je zaradi delitve Nemčije na vzhodni in zahodni del razdelilo tudi podjetje. V Vzhodni Nemčiji je ostal VEB Carl Zeiss Jena, v Zahodni pa so ustanovili Zeiss Opton GmbH Oberkochen. V Jeni so razvili številne druge instrumente, kot so nivelirji Ni 060, Ni 030, Ni 004, Koni 007 in teodoliti Theo 030, Theo 020, Theo 010, Dahlta in Redta 002. Do leta 1989 so imeli že 60.000 zaposlenih v petindvajsetih obratih po vsej Nemčiji, v proizvodnem programu pa so imeli preko tisoč glavnih tipov instrumentov. Zeiss Oberkochen je medtem uspešno razvil elektronske tahimetre z oznakami Elta in Redta. V prihodnjih letih se je podjetje še nekajkrat preimenovalo in združilo moči s podjetjem Spectra Precision, dandanes pa spada pod okrilje ameriškega koncerna Trimble, pod imenom Trimble Jena GmbH (Cimerman, 1960; Slak, 2017).</p><br></div>");
+      });
+      
+      starke.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").show();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Predhodnik podjetja je bila dunajska mehanična delavnica cesarsko-kraljevega politehničnega inštituta, ki je izdelovala instrumente že od leta 1818. V njej sta bila zaposlena tudi Georg Friderich von Reichenbach in Andreas Jaworsky, kasneje pa sta se jima pridružila še mehanik Christoph Starke in Simon Stampfer. Najprej so izdelovali instrumente za merjenje kotov, pozneje pa so proizvodnjo razširili tudi na druge geodetske, astronomske in fizikalne instrumente, kot so nivelirji, teodoliti in podobno. Leta 1836 so izumili nivelir z mikrometrom Stampfer & Starke – ta izum so začele kasneje uporabljati vse ostale finomehanične delavnice takratne monarhije. Podjetje Starke & Kammerer kot tako sta leta 1866 ustanovila sin in svak Christopha Starka: Gustav Starke in Karl Kammerer. Podjetje je delovalo do leta 1937 (Cimerman, 1960; Slak, 2017).</p><br></div>");
+      });
+      
+      rost.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").show();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje sta leta 1888 na Dunaju ustanovila brata Rudolf in August Rost. Rudolf je prej delal v matematično-finomehaničnih delavnicah Starke & Kammerer na Dunaju. Podjetje je izdelovalo vse vrste geodetskih instrumentov in opreme. Njihovi produkti so bili teodoliti, višinomeri, razdaljemeri, instrumenti za fotogrametrijo, laserski razdaljemeri, topografski merilniki, kompasi, gozdarska merilna oprema, digitalizatorji, risalniki, skenerji in programska oprema. Izdelali so tudi prvi avtostereograf na svetu. Delovali so do leta 2007, ko jih je prevzelo podjetje Leica Geosystems iz Švice (Slak, 2017).</p><br></div>");
+      });
+      
+      neuhofer.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").show();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje je bilo ustanovljeno leta 1857 na Dunaju in je delovalo do leta 1925, vendar so ga leta 1881 poslovno preuredili. Sodili so pod cesarsko-kraljeve dvorne mehanike. Za svoje izdelke so leta 1900 prejeli zlato medaljo v Parizu. Izdelovali so geodetske instrumente in ostale geodetske pripomočke, s katerimi je bilo mogoče kartirati tehnične izmere. To so pantografi, planimetri, busole, late, kovinski ter platneni merski trakovi, računski stroji in merila. Med izdelki pa se je našla tudi gozdarska oprema. Podjetje je bilo znano po izdelavi busol (Slak, 2017).</p><br></div>");
+      });
+      
+      otto.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").show();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Mehanik Otto Fennel je podjetje ustanovil leta 1851. Pred tem je znanje pridobival v takrat zelo znani delavnici Breihaupt & Sohn v Kasslu. Podjetje se je razvilo v enega bolj prepoznavnih v svetu. Na začetka so imeli dva zaposlena, konec 19. stoletja pa že preko 50. Po Ottovi smrti leta 1891, sta podjetje vodila njegova sinova Adolf in Wilhelm Otto. Geodetske instrumente so izdelovali do leta 1968, danes pa tradicijo njihovih izdelkov nadaljuje nemško podjetje geoFENNEL, ki večino izdelkov izdela v Aziji. Na področju geodetskih instrumentov so bili znani po tehnoloških rešitvah za čitanje krogov, orodju za deljenje krogov in izdelavi avtoredukcijskega tahinmetra Hammer-Fennel (Slak, 2017).</p><br></div>");
+      });
+      
+      galileo.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").hide();
+        $(".neuhofer").hide();
+        $(".galileo").show();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">To pomembno italijansko podjetje za proizvodnjo znanstvenih instrumentov je imelo sedež v Firencah. Ustanovljeno je bilo med letoma 1863 in 1864 kot obrat, ki ga je zasnoval tedanji direktor florentinskega observatorija. Ime Officina Galileo se je prvič zasledilo leta 1870. Ukvarjali so se predvsem z izdelavo fizičnih in optičnih instrumentov, telegrafskih naprav in električnih ur. Delovali so do leta 1906, ko je bilo ustanovljeno drugo podjetje z imenom Officine Galileo. Izdelovali so laboratorijske in topografske instrumente, optične instrumente za kraljevo mornarico (predvsem periskope in daljnoglede), vzporedno pa so proizvajali tudi geodetske in fotogrametrične instrumente. Danes podjetje proizvaja predvsem vojaško in vesoljsko tehnologijo. Večkrat so se preoblikovali in preimenovali, najprej v Galileo Avionica, potem v Selex Galileo, danes pa delujejo pod imenom Selex ES (Slak, 2017).</p><br></div>");
+      });
+      
+      hp.on("change", e => {
+        $(".ostalo").hide();
+        $(".askania").hide();
+        $(".kern").hide();
+        $(".mom").hide();
+        $(".leica").hide();
+        $(".kraft").hide();
+        $(".breithaupt").hide();
+        $(".ertel").hide();
+        $(".gebruder").hide();
+        $(".hp").show();
+        $(".neuhofer").hide();
+        $(".galileo").hide();
+        $(".otto").hide();
+        $(".rost").hide();
+        $(".carl").hide();
+        $(".wild").hide();
+        $(".starke").hide();
+        $("#proizvajalec").html("<div><p class=\"animate-reveal animate-second d-flex justify-content-center\">Podjetje sta leta 1939 v kraju Palo Alto ustanovila sošolca William Rednigton Hewlett in David Packard. Ime sta izbrala z metom kovanca, majhna lesena garaža, ki je bila prva delavnica, pa je kasneje postala zgodovinski spomenik. Proizvajali so kakovostno elektronsko testno opremo ter instrumente, ki so se uporabljali predvsem v znanosti in v medicini. V 60. letih so se podali tudi v računalniške vode in postopoma postali eno izmed vodilnih podjetij na tem področju. Leta 2015 so se razdelili na HP Inc. in Hewlett Packard Enterprise, pri čemer se prvo podjetje ukvarja z računalniki in tiskalniki, drugo pa z računalniškimi storitvami. Na področju geodezije so svoj prispevek podali z nepogrešljivimi žepnimi kalkulatorji, ki so se uporabljali tako v pisarni, kot tudi na terenu, izdelovali pa so tudi razdaljemere  (Slak, 2017).</p><br></div>");
+      });
+    
+    </script>
+</html>
